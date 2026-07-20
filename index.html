@@ -9,9 +9,9 @@
 <style>
   :root {
     --navy: #1B2430;
-    --navy-deep: #141B24;
     --paper: #EFE3C8;
     --paper-tab: #E2D3AE;
+    --paper-flat: #E6DAC0;
     --ink: #2A2620;
     --ink-soft: #55503F;
     --teal: #4E7C6E;
@@ -43,9 +43,7 @@
     padding: 72px 24px 56px;
   }
 
-  header {
-    margin-bottom: 48px;
-  }
+  header { margin-bottom: 44px; }
 
   .eyebrow {
     font-family: 'IBM Plex Mono', monospace;
@@ -74,10 +72,31 @@
     margin: 0;
   }
 
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-pale);
+    margin: 40px 0 18px;
+  }
+  .section-label:first-of-type { margin-top: 0; }
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(159,194,182,0.25);
+  }
+  .section-label.muted { color: var(--cream-muted); }
+  .section-label.muted::after { background: rgba(185,191,201,0.18); }
+
   .cards {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 20px;
   }
 
   .card {
@@ -116,14 +135,14 @@
     box-shadow: 0 -1px 0 rgba(0,0,0,0.08) inset;
   }
 
-  .card:nth-child(1) { transform: rotate(-0.6deg); }
-  .card:nth-child(2) { transform: rotate(0.5deg); }
-  .card:nth-child(3) { transform: rotate(-0.3deg); }
-  .card:nth-child(4) { transform: rotate(0.7deg); }
-  .card:nth-child(5) { transform: rotate(-0.5deg); }
-  .card:nth-child(6) { transform: rotate(0.35deg); }
+  .cards.primary .card:nth-child(1) { transform: rotate(-0.6deg); }
+  .cards.primary .card:nth-child(2) { transform: rotate(0.5deg); }
+  .cards.primary .card:nth-child(3) { transform: rotate(-0.3deg); }
+  .cards.primary .card:nth-child(4) { transform: rotate(0.7deg); }
+  .cards.primary .card:nth-child(5) { transform: rotate(-0.5deg); }
+  .cards.primary .card:nth-child(6) { transform: rotate(0.35deg); }
 
-  .card:hover, .card:focus-visible {
+  .cards.primary .card:hover, .cards.primary .card:focus-visible {
     transform: rotate(0deg) translateY(-4px);
     box-shadow: 0 12px 22px rgba(0,0,0,0.34), 0 1px 0 rgba(255,255,255,0.08) inset;
   }
@@ -149,16 +168,50 @@
     font-family: 'IBM Plex Mono', monospace;
     font-size: 20px;
     color: var(--teal);
-    transform: translateX(0);
     transition: transform 0.22s ease;
   }
 
-  .card:hover .arrow, .card:focus-visible .arrow {
-    transform: translateX(4px);
-  }
+  .card:hover .arrow, .card:focus-visible .arrow { transform: translateX(4px); }
 
   .card.accent-ochre::before { color: #6E4A2A; }
   .card.accent-ochre .arrow { color: var(--ochre); }
+
+  /* secondary (mniej ważne / hobby) — płaskie, kompaktowe wiersze */
+  .cards.secondary { gap: 10px; }
+
+  .row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+    background: var(--paper-flat);
+    color: var(--ink);
+    text-decoration: none;
+    padding: 13px 18px;
+    border-radius: 3px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+
+  .row:hover, .row:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.26);
+  }
+
+  .row:focus-visible { outline: 2px solid var(--teal-pale); outline-offset: 3px; }
+
+  .row-title {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  .row-desc {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    flex-shrink: 0;
+  }
 
   footer {
     margin-top: 52px;
@@ -170,13 +223,14 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .card, .arrow { transition: none; }
-    .card:hover, .card:focus-visible { transform: none; }
+    .card, .arrow, .row { transition: none; }
+    .card:hover, .card:focus-visible, .row:hover, .row:focus-visible { transform: none; }
   }
 
   @media (max-width: 420px) {
-    .card { flex-direction: row; padding: 20px 18px 18px; }
+    .card { padding: 20px 18px 18px; }
     .card-body p { max-width: 26ch; }
+    .row { flex-direction: column; align-items: flex-start; gap: 3px; }
   }
 </style>
 </head>
@@ -188,16 +242,17 @@
       <p class="tagline">Projekty na styku psychologii i technologii — dla osób w trzeźwieniu, w spektrum, i tych, którzy wychodzą z toksycznych grup.</p>
     </header>
 
-    <div class="cards">
-      <a class="card" data-tag="Portfolio" href="https://pawel-wasiak-portfolio.netlify.app/" target="_blank" rel="noopener">
+    <p class="section-label">Psychologia</p>
+    <div class="cards primary">
+      <a class="card" data-tag="Portfolio" href="https://pwasiak30.github.io/pawel-wasiak-portfolio/" target="_blank" rel="noopener">
         <div class="card-body">
-          <h2>Wszystkie projekty</h2>
-          <p>Jedno miejsce ze wszystkimi narzędziami i opisami.</p>
+          <h2>Portfolio psychologiczne</h2>
+          <p>Zbiór moich projektów z pogranicza psychologii i technologii.</p>
         </div>
         <span class="arrow">→</span>
       </a>
 
-      <a class="card" data-tag="PWA · trzeźwość" href="https://nie-pij-dzis.netlify.app/" target="_blank" rel="noopener">
+      <a class="card" data-tag="PWA · trzeźwość" href="https://pwasiak30.github.io/Nie-pij-dzis/" target="_blank" rel="noopener">
         <div class="card-body">
           <h2>Nie-pij-dzisiaj</h2>
           <p>Dziennik głodu, plan na weekend, 12 kroków — offline.</p>
@@ -205,7 +260,7 @@
         <span class="arrow">→</span>
       </a>
 
-      <a class="card accent-ochre" data-tag="Narzędzie kliniczne" href="https://icd11-dsm5-search.netlify.app/" target="_blank" rel="noopener">
+      <a class="card accent-ochre" data-tag="Narzędzie kliniczne" href="https://pwasiak30.github.io/icd11-dsm5-search/" target="_blank" rel="noopener">
         <div class="card-body">
           <h2>ICD-11 / DSM-5 Search</h2>
           <p>Szybkie wyszukiwanie kryteriów diagnostycznych.</p>
@@ -213,7 +268,7 @@
         <span class="arrow">→</span>
       </a>
 
-      <a class="card" data-tag="Edukacja" href="https://wolna-glowa.netlify.app/" target="_blank" rel="noopener">
+      <a class="card" data-tag="Edukacja" href="https://pwasiak30.github.io/wolna-glowa/" target="_blank" rel="noopener">
         <div class="card-body">
           <h2>Wolna Głowa</h2>
           <p>Jak rozpoznać sektę i manipulację grupową.</p>
@@ -221,7 +276,7 @@
         <span class="arrow">→</span>
       </a>
 
-      <a class="card accent-ochre" data-tag="AAC" href="https://pwasiak30.github.io/aac-generator" target="_blank" rel="noopener">
+      <a class="card accent-ochre" data-tag="AAC" href="https://pwasiak30.github.io/aac-generator/" target="_blank" rel="noopener">
         <div class="card-body">
           <h2>AAC Generator</h2>
           <p>Generator kart komunikacyjnych opartych na ARASAAC.</p>
@@ -229,12 +284,40 @@
         <span class="arrow">→</span>
       </a>
 
-      <a class="card" data-tag="Profil" href="https://www.linkedin.com/in/pwasiak30" target="_blank" rel="noopener">
+      <a class="card" data-tag="TUS" href="https://pwasiak30.github.io/tus-planner/" target="_blank" rel="noopener">
         <div class="card-body">
-          <h2>LinkedIn</h2>
-          <p>Doświadczenie, studia i pełen opis projektów.</p>
+          <h2>TUS Planner</h2>
+          <p>Narzędzie do planowania zajęć Treningu Umiejętności Społecznych.</p>
         </div>
         <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <p class="section-label muted">Inne projekty</p>
+    <div class="cards secondary">
+      <a class="row" href="https://pwasiak30.github.io/endevour-package-checker/" target="_blank" rel="noopener">
+        <span class="row-title">Endeavour Package Checker</span>
+        <span class="row-desc">sprawdzarka pakietów Linux</span>
+      </a>
+      <a class="row" href="https://pwasiak30.github.io/tablice-rejestracyjne/" target="_blank" rel="noopener">
+        <span class="row-title">Tablice rejestracyjne</span>
+        <span class="row-desc">rozpoznawanie regionu po numerze</span>
+      </a>
+      <a class="row" href="https://pwasiak30.github.io/drzewo-genealogiczne/" target="_blank" rel="noopener">
+        <span class="row-title">Drzewo genealogiczne</span>
+        <span class="row-desc">rodzinne drzewo online</span>
+      </a>
+      <a class="row" href="https://pwasiak30.github.io/Wied-min-3-Kody-do-zbroi-i-rynsztunku/" target="_blank" rel="noopener">
+        <span class="row-title">Wiedźmin 3 — kody</span>
+        <span class="row-desc">zbroja i rynsztunek</span>
+      </a>
+    </div>
+
+    <p class="section-label muted">Profil</p>
+    <div class="cards secondary">
+      <a class="row" href="https://www.linkedin.com/in/pwasiak30" target="_blank" rel="noopener">
+        <span class="row-title">LinkedIn</span>
+        <span class="row-desc">doświadczenie i studia</span>
       </a>
     </div>
 
