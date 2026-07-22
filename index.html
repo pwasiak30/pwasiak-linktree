@@ -128,7 +128,6 @@ box-shadow: 0 -1px 0 rgba(0,0,0,0.08) inset;
 .cards.primary .card:nth-child(4) { transform: rotate(0.7deg); }
 .cards.primary .card:nth-child(5) { transform: rotate(-0.5deg); }
 .cards.primary .card:nth-child(6) { transform: rotate(0.35deg); }
-.cards.primary .card:nth-child(7) { transform: rotate(-0.4deg); }
 .cards.primary .card:hover, .cards.primary .card:focus-visible {
 transform: rotate(0deg) translateY(-4px);
 box-shadow: 0 12px 22px rgba(0,0,0,0.34), 0 1px 0 rgba(255,255,255,0.08) inset;
@@ -157,7 +156,6 @@ transition: transform 0.22s ease;
 .card:hover .arrow, .card:focus-visible .arrow { transform: translateX(4px); }
 .card.accent-ochre::before { color: #6E4A2A; }
 .card.accent-ochre .arrow { color: var(--ochre); }
-
 /* secondary (mniej ważne / hobby) — płaskie, kompaktowe wiersze */
 .cards.secondary { gap: 10px; }
 .row {
@@ -189,6 +187,12 @@ font-size: 12.5px;
 color: var(--ink-soft);
 flex-shrink: 0;
 }
+.row.accent-ochre {
+background: var(--paper-tab);
+border-left: 3px solid var(--ochre);
+padding-left: 15px;
+}
+.row.accent-ochre .row-title { color: #6E4A2A; }
 footer {
 margin-top: 52px;
 font-family: 'IBM Plex Mono', monospace;
@@ -218,6 +222,7 @@ opacity: 0.6;
 
 <p class="section-label">Psychologia</p>
 <div class="cards primary">
+
 <a class="card" data-tag="Portfolio" href="https://pwasiak30.github.io/pawel-wasiak-portfolio/" target="_blank" rel="noopener">
 <div class="card-body">
 <h2>Portfolio psychologiczne</h2>
@@ -238,14 +243,6 @@ opacity: 0.6;
 <div class="card-body">
 <h2>ICD-11 / DSM-5 Search</h2>
 <p>Szybkie wyszukiwanie kryteriów diagnostycznych.</p>
-</div>
-<span class="arrow">→</span>
-</a>
-
-<a class="card" data-tag="Kwestionariusze" href="https://pwasiak30.github.io/kwestionariusze-przesiewowe/" target="_blank" rel="noopener">
-<div class="card-body">
-<h2>Narzędzia Przesiewowe</h2>
-<p>GAD-7, PHQ-9, PCL-5, BDI-II, AUDIT — automatyczny scoring.</p>
 </div>
 <span class="arrow">→</span>
 </a>
@@ -273,42 +270,62 @@ opacity: 0.6;
 </div>
 <span class="arrow">→</span>
 </a>
+
 </div>
 
 <p class="section-label muted">Inne projekty</p>
 <div class="cards secondary">
+
 <a class="row" href="https://pwasiak30.github.io/endevour-package-checker/" target="_blank" rel="noopener">
 <span class="row-title">Endeavour Package Checker</span>
 <span class="row-desc">sprawdzarka pakietów Linux</span>
 </a>
+
 <a class="row" href="https://pwasiak30.github.io/tablice-rejestracyjne/" target="_blank" rel="noopener">
 <span class="row-title">Tablice rejestracyjne</span>
 <span class="row-desc">rozpoznawanie regionu po numerze</span>
 </a>
+
 <a class="row" href="https://pwasiak30.github.io/drzewo-genealogiczne/" target="_blank" rel="noopener">
 <span class="row-title">Drzewo genealogiczne</span>
 <span class="row-desc">rodzinne drzewo online</span>
 </a>
+
 <a class="row" href="https://pwasiak30.github.io/Wied-min-3-Kody-do-zbroi-i-rynsztunku/" target="_blank" rel="noopener">
 <span class="row-title">Wiedźmin 3 — kody</span>
 <span class="row-desc">zbroja i rynsztunek</span>
 </a>
+
 <a class="row" href="https://pwasiak30.github.io/pdf-do-tekstu/" target="_blank" rel="noopener">
 <span class="row-title">PDF do tekstu</span>
 <span class="row-desc">konwersja PDF na tekst</span>
 </a>
+
 </div>
 
 <p class="section-label muted">Profil</p>
 <div class="cards secondary">
+
 <a class="row" href="https://www.linkedin.com/in/pwasiak30" target="_blank" rel="noopener">
 <span class="row-title">LinkedIn</span>
 <span class="row-desc">doświadczenie i studia</span>
 </a>
+
 <a class="row" href="https://www.youtube.com/@psychologia_wasiak" target="_blank" rel="noopener">
 <span class="row-title">YouTube</span>
 <span class="row-desc">kanał o psychologii</span>
 </a>
+
+</div>
+
+<p class="section-label muted">Wsparcie</p>
+<div class="cards secondary">
+
+<a class="row accent-ochre" href="https://suppi.pl/pawelwasiak" target="_blank" rel="noopener">
+<span class="row-title">☕ Postaw mi kawę</span>
+<span class="row-desc">Suppi</span>
+</a>
+
 </div>
 
 <footer>Brzeziny, woj. łódzkie</footer>
