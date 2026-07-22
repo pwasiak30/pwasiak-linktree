@@ -7,329 +7,311 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #1B2430;
-    --paper: #EFE3C8;
-    --paper-tab: #E2D3AE;
-    --paper-flat: #E6DAC0;
-    --ink: #2A2620;
-    --ink-soft: #55503F;
-    --teal: #4E7C6E;
-    --teal-pale: #9FC2B6;
-    --ochre: #B5794A;
-    --cream-text: #F0EAD8;
-    --cream-muted: #B9BFC9;
-  }
+:root {
+--navy: #1B2430;
+--paper: #EFE3C8;
+--paper-tab: #E2D3AE;
+--paper-flat: #E6DAC0;
+--ink: #2A2620;
+--ink-soft: #55503F;
+--teal: #4E7C6E;
+--teal-pale: #9FC2B6;
+--ochre: #B5794A;
+--cream-text: #F0EAD8;
+--cream-muted: #B9BFC9;
+}
+* { box-sizing: border-box; }
+html, body {
+margin: 0;
+padding: 0;
+background: var(--navy);
+background-image:
+radial-gradient(ellipse at 50% -10%, rgba(78,124,110,0.16), transparent 60%),
+radial-gradient(circle, rgba(240,234,216,0.05) 1px, transparent 1px);
+background-size: auto, 28px 28px;
+background-position: 0 0, 0 0;
+color: var(--cream-text);
+font-family: 'Work Sans', sans-serif;
+min-height: 100vh;
+}
+.wrap {
+max-width: 560px;
+margin: 0 auto;
+padding: 72px 24px 56px;
+}
+header { margin-bottom: 44px; }
+.eyebrow {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 12px;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(--teal-pale);
+margin: 0 0 14px;
+}
+h1 {
+font-family: 'Fraunces', serif;
+font-weight: 600;
+font-size: clamp(2.1rem, 6vw, 2.9rem);
+line-height: 1.05;
+margin: 0 0 14px;
+color: var(--cream-text);
+letter-spacing: -0.01em;
+}
+.tagline {
+font-size: 16px;
+line-height: 1.55;
+color: var(--cream-muted);
+max-width: 42ch;
+margin: 0;
+}
+.section-label {
+display: flex;
+align-items: center;
+gap: 12px;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 11px;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+color: var(--teal-pale);
+margin: 40px 0 18px;
+}
+.section-label:first-of-type { margin-top: 0; }
+.section-label::after {
+content: "";
+flex: 1;
+height: 1px;
+background: rgba(159,194,182,0.25);
+}
+.section-label.muted { color: var(--cream-muted); }
+.section-label.muted::after { background: rgba(185,191,201,0.18); }
+.cards {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+.card {
+position: relative;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 16px;
+background: var(--paper);
+color: var(--ink);
+text-decoration: none;
+padding: 22px 24px 20px;
+border-radius: 3px;
+box-shadow: 0 6px 14px rgba(0,0,0,0.28), 0 1px 0 rgba(255,255,255,0.06) inset;
+transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.card:focus-visible {
+outline: 2px solid var(--teal-pale);
+outline-offset: 3px;
+}
+.card::before {
+content: attr(data-tag);
+position: absolute;
+top: -11px;
+left: 20px;
+background: var(--paper-tab);
+color: var(--ink-soft);
+font-family: 'IBM Plex Mono', monospace;
+font-size: 10px;
+letter-spacing: 0.09em;
+text-transform: uppercase;
+padding: 4px 9px 3px;
+border-radius: 2px 2px 0 0;
+box-shadow: 0 -1px 0 rgba(0,0,0,0.08) inset;
+}
+.cards.primary .card:nth-child(1) { transform: rotate(-0.6deg); }
+.cards.primary .card:nth-child(2) { transform: rotate(0.5deg); }
+.cards.primary .card:nth-child(3) { transform: rotate(-0.3deg); }
+.cards.primary .card:nth-child(4) { transform: rotate(0.7deg); }
+.cards.primary .card:nth-child(5) { transform: rotate(-0.5deg); }
+.cards.primary .card:nth-child(6) { transform: rotate(0.35deg); }
+.cards.primary .card:nth-child(7) { transform: rotate(-0.4deg); }
+.cards.primary .card:hover, .cards.primary .card:focus-visible {
+transform: rotate(0deg) translateY(-4px);
+box-shadow: 0 12px 22px rgba(0,0,0,0.34), 0 1px 0 rgba(255,255,255,0.08) inset;
+}
+.card-body h2 {
+font-family: 'Fraunces', serif;
+font-weight: 500;
+font-size: 19px;
+margin: 6px 0 5px;
+color: var(--ink);
+}
+.card-body p {
+font-size: 14px;
+line-height: 1.45;
+color: var(--ink-soft);
+margin: 0;
+max-width: 34ch;
+}
+.arrow {
+flex-shrink: 0;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 20px;
+color: var(--teal);
+transition: transform 0.22s ease;
+}
+.card:hover .arrow, .card:focus-visible .arrow { transform: translateX(4px); }
+.card.accent-ochre::before { color: #6E4A2A; }
+.card.accent-ochre .arrow { color: var(--ochre); }
 
-  * { box-sizing: border-box; }
-
-  html, body {
-    margin: 0;
-    padding: 0;
-    background: var(--navy);
-    background-image:
-      radial-gradient(ellipse at 50% -10%, rgba(78,124,110,0.16), transparent 60%),
-      radial-gradient(circle, rgba(240,234,216,0.05) 1px, transparent 1px);
-    background-size: auto, 28px 28px;
-    background-position: 0 0, 0 0;
-    color: var(--cream-text);
-    font-family: 'Work Sans', sans-serif;
-    min-height: 100vh;
-  }
-
-  .wrap {
-    max-width: 560px;
-    margin: 0 auto;
-    padding: 72px 24px 56px;
-  }
-
-  header { margin-bottom: 44px; }
-
-  .eyebrow {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--teal-pale);
-    margin: 0 0 14px;
-  }
-
-  h1 {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: clamp(2.1rem, 6vw, 2.9rem);
-    line-height: 1.05;
-    margin: 0 0 14px;
-    color: var(--cream-text);
-    letter-spacing: -0.01em;
-  }
-
-  .tagline {
-    font-size: 16px;
-    line-height: 1.55;
-    color: var(--cream-muted);
-    max-width: 42ch;
-    margin: 0;
-  }
-
-  .section-label {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--teal-pale);
-    margin: 40px 0 18px;
-  }
-  .section-label:first-of-type { margin-top: 0; }
-  .section-label::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background: rgba(159,194,182,0.25);
-  }
-  .section-label.muted { color: var(--cream-muted); }
-  .section-label.muted::after { background: rgba(185,191,201,0.18); }
-
-  .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .card {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    background: var(--paper);
-    color: var(--ink);
-    text-decoration: none;
-    padding: 22px 24px 20px;
-    border-radius: 3px;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.28), 0 1px 0 rgba(255,255,255,0.06) inset;
-    transition: transform 0.22s ease, box-shadow 0.22s ease;
-  }
-
-  .card:focus-visible {
-    outline: 2px solid var(--teal-pale);
-    outline-offset: 3px;
-  }
-
-  .card::before {
-    content: attr(data-tag);
-    position: absolute;
-    top: -11px;
-    left: 20px;
-    background: var(--paper-tab);
-    color: var(--ink-soft);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    padding: 4px 9px 3px;
-    border-radius: 2px 2px 0 0;
-    box-shadow: 0 -1px 0 rgba(0,0,0,0.08) inset;
-  }
-
-  .cards.primary .card:nth-child(1) { transform: rotate(-0.6deg); }
-  .cards.primary .card:nth-child(2) { transform: rotate(0.5deg); }
-  .cards.primary .card:nth-child(3) { transform: rotate(-0.3deg); }
-  .cards.primary .card:nth-child(4) { transform: rotate(0.7deg); }
-  .cards.primary .card:nth-child(5) { transform: rotate(-0.5deg); }
-  .cards.primary .card:nth-child(6) { transform: rotate(0.35deg); }
-
-  .cards.primary .card:hover, .cards.primary .card:focus-visible {
-    transform: rotate(0deg) translateY(-4px);
-    box-shadow: 0 12px 22px rgba(0,0,0,0.34), 0 1px 0 rgba(255,255,255,0.08) inset;
-  }
-
-  .card-body h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 19px;
-    margin: 6px 0 5px;
-    color: var(--ink);
-  }
-
-  .card-body p {
-    font-size: 14px;
-    line-height: 1.45;
-    color: var(--ink-soft);
-    margin: 0;
-    max-width: 34ch;
-  }
-
-  .arrow {
-    flex-shrink: 0;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 20px;
-    color: var(--teal);
-    transition: transform 0.22s ease;
-  }
-
-  .card:hover .arrow, .card:focus-visible .arrow { transform: translateX(4px); }
-
-  .card.accent-ochre::before { color: #6E4A2A; }
-  .card.accent-ochre .arrow { color: var(--ochre); }
-
-  /* secondary (mniej ważne / hobby) — płaskie, kompaktowe wiersze */
-  .cards.secondary { gap: 10px; }
-
-  .row {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 14px;
-    background: var(--paper-flat);
-    color: var(--ink);
-    text-decoration: none;
-    padding: 13px 18px;
-    border-radius: 3px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-    transition: transform 0.18s ease, box-shadow 0.18s ease;
-  }
-
-  .row:hover, .row:focus-visible {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.26);
-  }
-
-  .row:focus-visible { outline: 2px solid var(--teal-pale); outline-offset: 3px; }
-
-  .row-title {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 500;
-    font-size: 15px;
-    color: var(--ink);
-  }
-
-  .row-desc {
-    font-size: 12.5px;
-    color: var(--ink-soft);
-    flex-shrink: 0;
-  }
-
-  footer {
-    margin-top: 52px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    color: var(--cream-muted);
-    opacity: 0.6;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .card, .arrow, .row { transition: none; }
-    .card:hover, .card:focus-visible, .row:hover, .row:focus-visible { transform: none; }
-  }
-
-  @media (max-width: 420px) {
-    .card { padding: 20px 18px 18px; }
-    .card-body p { max-width: 26ch; }
-    .row { flex-direction: column; align-items: flex-start; gap: 3px; }
-  }
+/* secondary (mniej ważne / hobby) — płaskie, kompaktowe wiersze */
+.cards.secondary { gap: 10px; }
+.row {
+display: flex;
+align-items: baseline;
+justify-content: space-between;
+gap: 14px;
+background: var(--paper-flat);
+color: var(--ink);
+text-decoration: none;
+padding: 13px 18px;
+border-radius: 3px;
+box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.row:hover, .row:focus-visible {
+transform: translateY(-2px);
+box-shadow: 0 6px 14px rgba(0,0,0,0.26);
+}
+.row:focus-visible { outline: 2px solid var(--teal-pale); outline-offset: 3px; }
+.row-title {
+font-family: 'Work Sans', sans-serif;
+font-weight: 500;
+font-size: 15px;
+color: var(--ink);
+}
+.row-desc {
+font-size: 12.5px;
+color: var(--ink-soft);
+flex-shrink: 0;
+}
+footer {
+margin-top: 52px;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 11px;
+letter-spacing: 0.06em;
+color: var(--cream-muted);
+opacity: 0.6;
+}
+@media (prefers-reduced-motion: reduce) {
+.card, .arrow, .row { transition: none; }
+.card:hover, .card:focus-visible, .row:hover, .row:focus-visible { transform: none; }
+}
+@media (max-width: 420px) {
+.card { padding: 20px 18px 18px; }
+.card-body p { max-width: 26ch; }
+.row { flex-direction: column; align-items: flex-start; gap: 3px; }
+}
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <p class="eyebrow">Cześć, tu Paweł</p>
-      <h1>Psycholog w budowie.<br>Koduję narzędzia, które pomagają.</h1>
-      <p class="tagline">Projekty na styku psychologii i technologii — dla osób w trzeźwieniu, w spektrum, i tych, którzy wychodzą z toksycznych grup.</p>
-    </header>
+<div class="wrap">
+<header>
+<p class="eyebrow">Cześć, tu Paweł</p>
+<h1>Psycholog w budowie.<br>Koduję narzędzia, które pomagają.</h1>
+<p class="tagline">Projekty na styku psychologii i technologii — dla osób w trzeźwieniu, w spektrum, i tych, którzy wychodzą z toksycznych grup.</p>
+</header>
 
-    <p class="section-label">Psychologia</p>
-    <div class="cards primary">
-      <a class="card" data-tag="Portfolio" href="https://pwasiak30.github.io/pawel-wasiak-portfolio/" target="_blank" rel="noopener">
-        <div class="card-body">
-          <h2>Portfolio psychologiczne</h2>
-          <p>Zbiór moich projektów z pogranicza psychologii i technologii.</p>
-        </div>
-        <span class="arrow">→</span>
-      </a>
+<p class="section-label">Psychologia</p>
+<div class="cards primary">
+<a class="card" data-tag="Portfolio" href="https://pwasiak30.github.io/pawel-wasiak-portfolio/" target="_blank" rel="noopener">
+<div class="card-body">
+<h2>Portfolio psychologiczne</h2>
+<p>Zbiór moich projektów z pogranicza psychologii i technologii.</p>
+</div>
+<span class="arrow">→</span>
+</a>
 
-      <a class="card" data-tag="PWA · trzeźwość" href="https://pwasiak30.github.io/Nie-pij-dzis/" target="_blank" rel="noopener">
-        <div class="card-body">
-          <h2>Nie-pij-dzisiaj</h2>
-          <p>Dziennik głodu, plan na weekend, 12 kroków — offline.</p>
-        </div>
-        <span class="arrow">→</span>
-      </a>
+<a class="card" data-tag="PWA · trzeźwość" href="https://pwasiak30.github.io/Nie-pij-dzis/" target="_blank" rel="noopener">
+<div class="card-body">
+<h2>Nie-pij-dzisiaj</h2>
+<p>Dziennik głodu, plan na weekend, 12 kroków — offline.</p>
+</div>
+<span class="arrow">→</span>
+</a>
 
-      <a class="card accent-ochre" data-tag="Narzędzie kliniczne" href="https://pwasiak30.github.io/icd11-dsm5-search/" target="_blank" rel="noopener">
-        <div class="card-body">
-          <h2>ICD-11 / DSM-5 Search</h2>
-          <p>Szybkie wyszukiwanie kryteriów diagnostycznych.</p>
-        </div>
-        <span class="arrow">→</span>
-      </a>
+<a class="card accent-ochre" data-tag="Narzędzie kliniczne" href="https://pwasiak30.github.io/icd11-dsm5-search/" target="_blank" rel="noopener">
+<div class="card-body">
+<h2>ICD-11 / DSM-5 Search</h2>
+<p>Szybkie wyszukiwanie kryteriów diagnostycznych.</p>
+</div>
+<span class="arrow">→</span>
+</a>
 
-      <a class="card" data-tag="Edukacja" href="https://pwasiak30.github.io/wolna-glowa/" target="_blank" rel="noopener">
-        <div class="card-body">
-          <h2>Wolna Głowa</h2>
-          <p>Jak rozpoznać sektę i manipulację grupową.</p>
-        </div>
-        <span class="arrow">→</span>
-      </a>
+<a class="card" data-tag="Kwestionariusze" href="https://pwasiak30.github.io/kwestionariusze-przesiewowe/" target="_blank" rel="noopener">
+<div class="card-body">
+<h2>Narzędzia Przesiewowe</h2>
+<p>GAD-7, PHQ-9, PCL-5, BDI-II, AUDIT — automatyczny scoring.</p>
+</div>
+<span class="arrow">→</span>
+</a>
 
-      <a class="card accent-ochre" data-tag="AAC" href="https://pwasiak30.github.io/aac-generator/" target="_blank" rel="noopener">
-        <div class="card-body">
-          <h2>AAC Generator</h2>
-          <p>Generator kart komunikacyjnych opartych na ARASAAC.</p>
-        </div>
-        <span class="arrow">→</span>
-      </a>
+<a class="card" data-tag="Edukacja" href="https://pwasiak30.github.io/wolna-glowa/" target="_blank" rel="noopener">
+<div class="card-body">
+<h2>Wolna Głowa</h2>
+<p>Jak rozpoznać sektę i manipulację grupową.</p>
+</div>
+<span class="arrow">→</span>
+</a>
 
-      <a class="card" data-tag="TUS" href="https://pwasiak30.github.io/tus-planner/" target="_blank" rel="noopener">
-        <div class="card-body">
-          <h2>TUS Planner</h2>
-          <p>Narzędzie do planowania zajęć Treningu Umiejętności Społecznych.</p>
-        </div>
-        <span class="arrow">→</span>
-      </a>
-    </div>
+<a class="card accent-ochre" data-tag="AAC" href="https://pwasiak30.github.io/aac-generator/" target="_blank" rel="noopener">
+<div class="card-body">
+<h2>AAC Generator</h2>
+<p>Generator kart komunikacyjnych opartych na ARASAAC.</p>
+</div>
+<span class="arrow">→</span>
+</a>
 
-    <p class="section-label muted">Inne projekty</p>
-    <div class="cards secondary">
-      <a class="row" href="https://pwasiak30.github.io/endevour-package-checker/" target="_blank" rel="noopener">
-        <span class="row-title">Endeavour Package Checker</span>
-        <span class="row-desc">sprawdzarka pakietów Linux</span>
-      </a>
-      <a class="row" href="https://pwasiak30.github.io/tablice-rejestracyjne/" target="_blank" rel="noopener">
-        <span class="row-title">Tablice rejestracyjne</span>
-        <span class="row-desc">rozpoznawanie regionu po numerze</span>
-      </a>
-      <a class="row" href="https://pwasiak30.github.io/drzewo-genealogiczne/" target="_blank" rel="noopener">
-        <span class="row-title">Drzewo genealogiczne</span>
-        <span class="row-desc">rodzinne drzewo online</span>
-      </a>
-      <a class="row" href="https://pwasiak30.github.io/Wied-min-3-Kody-do-zbroi-i-rynsztunku/" target="_blank" rel="noopener">
-        <span class="row-title">Wiedźmin 3 — kody</span>
-        <span class="row-desc">zbroja i rynsztunek</span>
-      </a>
-      <a class="row" href="https://pwasiak30.github.io/pdf-do-tekstu/" target="_blank" rel="noopener">
-        <span class="row-title">PDF do tekstu</span>
-        <span class="row-desc">konwersja PDF na tekst</span>
-      </a>
-    </div>
+<a class="card" data-tag="TUS" href="https://pwasiak30.github.io/tus-planner/" target="_blank" rel="noopener">
+<div class="card-body">
+<h2>TUS Planner</h2>
+<p>Narzędzie do planowania zajęć Treningu Umiejętności Społecznych.</p>
+</div>
+<span class="arrow">→</span>
+</a>
+</div>
 
-    <p class="section-label muted">Profil</p>
-    <div class="cards secondary">
-      <a class="row" href="https://www.linkedin.com/in/pwasiak30" target="_blank" rel="noopener">
-        <span class="row-title">LinkedIn</span>
-        <span class="row-desc">doświadczenie i studia</span>
-      </a>
-      <a class="row" href="https://www.youtube.com/@psychologia_wasiak" target="_blank" rel="noopener">
-        <span class="row-title">YouTube</span>
-        <span class="row-desc">kanał o psychologii</span>
-      </a>
-    </div>
+<p class="section-label muted">Inne projekty</p>
+<div class="cards secondary">
+<a class="row" href="https://pwasiak30.github.io/endevour-package-checker/" target="_blank" rel="noopener">
+<span class="row-title">Endeavour Package Checker</span>
+<span class="row-desc">sprawdzarka pakietów Linux</span>
+</a>
+<a class="row" href="https://pwasiak30.github.io/tablice-rejestracyjne/" target="_blank" rel="noopener">
+<span class="row-title">Tablice rejestracyjne</span>
+<span class="row-desc">rozpoznawanie regionu po numerze</span>
+</a>
+<a class="row" href="https://pwasiak30.github.io/drzewo-genealogiczne/" target="_blank" rel="noopener">
+<span class="row-title">Drzewo genealogiczne</span>
+<span class="row-desc">rodzinne drzewo online</span>
+</a>
+<a class="row" href="https://pwasiak30.github.io/Wied-min-3-Kody-do-zbroi-i-rynsztunku/" target="_blank" rel="noopener">
+<span class="row-title">Wiedźmin 3 — kody</span>
+<span class="row-desc">zbroja i rynsztunek</span>
+</a>
+<a class="row" href="https://pwasiak30.github.io/pdf-do-tekstu/" target="_blank" rel="noopener">
+<span class="row-title">PDF do tekstu</span>
+<span class="row-desc">konwersja PDF na tekst</span>
+</a>
+</div>
 
-    <footer>Brzeziny, woj. łódzkie</footer>
-  </div>
+<p class="section-label muted">Profil</p>
+<div class="cards secondary">
+<a class="row" href="https://www.linkedin.com/in/pwasiak30" target="_blank" rel="noopener">
+<span class="row-title">LinkedIn</span>
+<span class="row-desc">doświadczenie i studia</span>
+</a>
+<a class="row" href="https://www.youtube.com/@psychologia_wasiak" target="_blank" rel="noopener">
+<span class="row-title">YouTube</span>
+<span class="row-desc">kanał o psychologii</span>
+</a>
+</div>
+
+<footer>Brzeziny, woj. łódzkie</footer>
+</div>
 </body>
 </html>
