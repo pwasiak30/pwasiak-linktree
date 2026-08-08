@@ -157,6 +157,32 @@ transition: transform 0.22s ease;
 .card:hover .arrow, .card:focus-visible .arrow { transform: translateX(4px); }
 .card.accent-ochre::before { color: #6E4A2A; }
 .card.accent-ochre .arrow { color: var(--ochre); }
+/* wyróżniona karta na samej górze */
+.cards.featured { margin-bottom: 40px; }
+.card.featured-card {
+transform: none;
+background: linear-gradient(155deg, var(--paper) 0%, var(--paper) 55%, #F3E9CE 100%);
+border: 1.5px solid var(--teal);
+box-shadow: 0 0 0 4px rgba(78,124,110,0.14), 0 10px 24px rgba(0,0,0,0.34), 0 1px 0 rgba(255,255,255,0.08) inset;
+animation: featured-glow 3.2s ease-in-out infinite;
+}
+.card.featured-card::before {
+background: var(--teal);
+color: #FFF7EC;
+}
+.card.featured-card .card-body h2 { font-size: 21px; }
+.card.featured-card .arrow { color: var(--teal); font-size: 22px; }
+.card.featured-card:hover, .card.featured-card:focus-visible {
+transform: translateY(-4px);
+box-shadow: 0 0 0 4px rgba(78,124,110,0.22), 0 14px 28px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.1) inset;
+}
+@keyframes featured-glow {
+0%, 100% { box-shadow: 0 0 0 4px rgba(78,124,110,0.14), 0 10px 24px rgba(0,0,0,0.34), 0 1px 0 rgba(255,255,255,0.08) inset; }
+50% { box-shadow: 0 0 0 7px rgba(78,124,110,0.22), 0 10px 24px rgba(0,0,0,0.34), 0 1px 0 rgba(255,255,255,0.08) inset; }
+}
+@media (prefers-reduced-motion: reduce) {
+.card.featured-card { animation: none; }
+}
 /* secondary (mniej ważne / hobby) — płaskie, kompaktowe wiersze */
 .cards.secondary { gap: 10px; }
 .row {
@@ -325,6 +351,18 @@ body { top: 0px !important; }
 <p class="tagline" data-i18n-en="Projects at the crossroads of psychology and technology — for people in recovery, on the autism spectrum, and those leaving toxic groups.">Projekty na styku psychologii i technologii — dla osób w trzeźwieniu, w spektrum, i tych, którzy wychodzą z toksycznych grup.</p>
 </header>
 
+<div class="cards featured">
+
+<a class="card featured-card" data-tag="Polecane" data-tag-en="Featured" href="https://pwasiak30.github.io/wolna-glowa/" target="_blank" rel="noopener">
+<div class="card-body">
+<h2 data-i18n-en="Free Mind">Wolna Głowa</h2>
+<p data-i18n-en="How to recognize a cult and group manipulation.">Jak rozpoznać sektę i manipulację grupową.</p>
+</div>
+<span class="arrow">→</span>
+</a>
+
+</div>
+
 <p class="section-label" data-i18n-en="Psychology">Psychologia</p>
 <div class="cards primary">
 
@@ -348,14 +386,6 @@ body { top: 0px !important; }
 <div class="card-body">
 <h2>ICD-11 / DSM-5 Search</h2>
 <p data-i18n-en="Fast lookup of diagnostic criteria.">Szybkie wyszukiwanie kryteriów diagnostycznych.</p>
-</div>
-<span class="arrow">→</span>
-</a>
-
-<a class="card" data-tag="Edukacja" data-tag-en="Education" href="https://pwasiak30.github.io/wolna-glowa/" target="_blank" rel="noopener">
-<div class="card-body">
-<h2 data-i18n-en="Free Mind">Wolna Głowa</h2>
-<p data-i18n-en="How to recognize a cult and group manipulation.">Jak rozpoznać sektę i manipulację grupową.</p>
 </div>
 <span class="arrow">→</span>
 </a>
