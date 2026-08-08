@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paweł Wasiak — linki</title>
+<title data-i18n-en="Paweł Wasiak — links">Paweł Wasiak — linki</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
@@ -244,142 +244,209 @@ outline: none;
 .coffee-fab { transition: none; }
 .coffee-fab:hover, .coffee-fab:focus-visible { transform: none; }
 }
+/* --- Przełącznik języka --- */
+.lang-switch {
+position: fixed;
+z-index: 9999;
+top: 16px;
+right: 16px;
+display: flex;
+align-items: center;
+gap: 4px;
+background: rgba(27,36,48,0.7);
+backdrop-filter: blur(6px);
+border: 1px solid rgba(159,194,182,0.28);
+border-radius: 999px;
+padding: 4px;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 11px;
+letter-spacing: 0.05em;
+}
+.lang-switch button {
+appearance: none;
+border: none;
+background: transparent;
+color: var(--cream-muted);
+padding: 6px 11px;
+border-radius: 999px;
+cursor: pointer;
+font-family: inherit;
+font-size: inherit;
+letter-spacing: inherit;
+transition: background 0.18s ease, color 0.18s ease;
+}
+.lang-switch button:hover { color: var(--cream-text); }
+.lang-switch button[aria-pressed="true"] {
+background: var(--teal);
+color: #FFF7EC;
+}
+.lang-switch button:focus-visible {
+outline: 2px solid var(--teal-pale);
+outline-offset: 2px;
+}
+.lang-switch .lang-more {
+color: var(--teal-pale);
+font-size: 13px;
+padding: 6px 8px;
+}
+@media (max-width: 420px) {
+.lang-switch { top: 10px; right: 10px; }
+}
+#google_translate_element {
+position: fixed;
+top: 58px;
+right: 16px;
+z-index: 9998;
+display: none;
+}
+#google_translate_element.open { display: block; }
+.goog-te-gadget { font-family: 'Work Sans', sans-serif !important; }
+body > .skiptranslate.goog-te-gadget { display: none !important; }
+.goog-te-banner-frame { display: none !important; }
+body { top: 0px !important; }
 </style>
 </head>
 <body>
-<a class="coffee-fab" href="https://suppi.pl/pawelwasiak" target="_blank" rel="noopener" title="Postaw mi kawę na Suppi">
+<div class="lang-switch" role="group" aria-label="Language / Język">
+<button type="button" id="lang-pl" aria-pressed="false">PL</button>
+<button type="button" id="lang-en" aria-pressed="false">EN</button>
+<button type="button" class="lang-more" id="lang-more" title="Other languages / inne języki (Google Translate)">🌐</button>
+</div>
+<div id="google_translate_element"></div>
+
+<a class="coffee-fab" href="https://suppi.pl/pawelwasiak" target="_blank" rel="noopener" title="Postaw mi kawę na Suppi" data-i18n-en-title="Buy me a coffee on Suppi">
 <span class="coffee-icon">☕</span>
-<span class="coffee-label">Postaw kawę</span>
+<span class="coffee-label" data-i18n-en="Buy a coffee">Postaw kawę</span>
 </a>
 <div class="wrap">
 <header>
-<p class="eyebrow">Cześć, tu Paweł</p>
-<h1>Psycholog w budowie.<br>Koduję narzędzia, które pomagają.</h1>
-<p class="tagline">Projekty na styku psychologii i technologii — dla osób w trzeźwieniu, w spektrum, i tych, którzy wychodzą z toksycznych grup.</p>
+<p class="eyebrow" data-i18n-en="Hi, I'm Paweł">Cześć, tu Paweł</p>
+<h1 data-i18n-en="Psychologist under construction.<br>I code tools that help.">Psycholog w budowie.<br>Koduję narzędzia, które pomagają.</h1>
+<p class="tagline" data-i18n-en="Projects at the crossroads of psychology and technology — for people in recovery, on the autism spectrum, and those leaving toxic groups.">Projekty na styku psychologii i technologii — dla osób w trzeźwieniu, w spektrum, i tych, którzy wychodzą z toksycznych grup.</p>
 </header>
 
-<p class="section-label">Psychologia</p>
+<p class="section-label" data-i18n-en="Psychology">Psychologia</p>
 <div class="cards primary">
 
-<a class="card" data-tag="Portfolio" href="https://pwasiak30.github.io/pawel-wasiak-portfolio/" target="_blank" rel="noopener">
+<a class="card" data-tag="Portfolio" data-tag-en="Portfolio" href="https://pwasiak30.github.io/pawel-wasiak-portfolio/" target="_blank" rel="noopener">
 <div class="card-body">
-<h2>Portfolio psychologiczne</h2>
-<p>Zbiór moich projektów z pogranicza psychologii i technologii.</p>
+<h2 data-i18n-en="Psychology portfolio">Portfolio psychologiczne</h2>
+<p data-i18n-en="A collection of my projects at the border of psychology and technology.">Zbiór moich projektów z pogranicza psychologii i technologii.</p>
 </div>
 <span class="arrow">→</span>
 </a>
 
-<a class="card" data-tag="PWA · trzeźwość" href="https://pwasiak30.github.io/Nie-pij-dzis/" target="_blank" rel="noopener">
+<a class="card" data-tag="PWA · trzeźwość" data-tag-en="PWA · sobriety" href="https://pwasiak30.github.io/Nie-pij-dzis/" target="_blank" rel="noopener">
 <div class="card-body">
-<h2>Nie-pij-dzisiaj</h2>
-<p>Dziennik głodu, plan na weekend, 12 kroków — offline.</p>
+<h2 data-i18n-en="Don't-drink-today">Nie-pij-dzisiaj</h2>
+<p data-i18n-en="Craving journal, weekend plan, 12 steps — offline.">Dziennik głodu, plan na weekend, 12 kroków — offline.</p>
 </div>
 <span class="arrow">→</span>
 </a>
 
-<a class="card accent-ochre" data-tag="Narzędzie kliniczne" href="https://pwasiak30.github.io/icd11-dsm5-search/" target="_blank" rel="noopener">
+<a class="card accent-ochre" data-tag="Narzędzie kliniczne" data-tag-en="Clinical tool" href="https://pwasiak30.github.io/icd11-dsm5-search/" target="_blank" rel="noopener">
 <div class="card-body">
 <h2>ICD-11 / DSM-5 Search</h2>
-<p>Szybkie wyszukiwanie kryteriów diagnostycznych.</p>
+<p data-i18n-en="Fast lookup of diagnostic criteria.">Szybkie wyszukiwanie kryteriów diagnostycznych.</p>
 </div>
 <span class="arrow">→</span>
 </a>
 
-<a class="card" data-tag="Edukacja" href="https://pwasiak30.github.io/wolna-glowa/" target="_blank" rel="noopener">
+<a class="card" data-tag="Edukacja" data-tag-en="Education" href="https://pwasiak30.github.io/wolna-glowa/" target="_blank" rel="noopener">
 <div class="card-body">
-<h2>Wolna Głowa</h2>
-<p>Jak rozpoznać sektę i manipulację grupową.</p>
+<h2 data-i18n-en="Free Mind">Wolna Głowa</h2>
+<p data-i18n-en="How to recognize a cult and group manipulation.">Jak rozpoznać sektę i manipulację grupową.</p>
 </div>
 <span class="arrow">→</span>
 </a>
 
-<a class="card accent-ochre" data-tag="AAC" href="https://pwasiak30.github.io/aac-generator/" target="_blank" rel="noopener">
+<a class="card accent-ochre" data-tag="AAC" data-tag-en="AAC" href="https://pwasiak30.github.io/aac-generator/" target="_blank" rel="noopener">
 <div class="card-body">
-<h2>AAC Generator</h2>
-<p>Generator kart komunikacyjnych opartych na ARASAAC.</p>
+<h2 data-i18n-en="AAC Generator">AAC Generator</h2>
+<p data-i18n-en="Communication card generator based on ARASAAC.">Generator kart komunikacyjnych opartych na ARASAAC.</p>
 </div>
 <span class="arrow">→</span>
 </a>
 
-<a class="card" data-tag="TUS" href="https://pwasiak30.github.io/tus-planner/" target="_blank" rel="noopener">
+<a class="card" data-tag="TUS" data-tag-en="TUS" href="https://pwasiak30.github.io/tus-planner/" target="_blank" rel="noopener">
 <div class="card-body">
-<h2>TUS Planner</h2>
-<p>Narzędzie do planowania zajęć Treningu Umiejętności Społecznych.</p>
+<h2 data-i18n-en="TUS Planner">TUS Planner</h2>
+<p data-i18n-en="A tool for planning Social Skills Training (TUS) sessions.">Narzędzie do planowania zajęć Treningu Umiejętności Społecznych.</p>
 </div>
 <span class="arrow">→</span>
 </a>
 
-<a class="card accent-ochre" data-tag="Narzędzie kliniczne" href="https://pwasiak30.github.io/kwestionariusze-przesiewowe/" target="_blank" rel="noopener">
+<a class="card accent-ochre" data-tag="Narzędzie kliniczne" data-tag-en="Clinical tool" href="https://pwasiak30.github.io/kwestionariusze-przesiewowe/" target="_blank" rel="noopener">
 <div class="card-body">
-<h2>Kwestionariusze przesiewowe</h2>
-<p>Zbiór narzędzi przesiewowych do szybkiej oceny psychologicznej.</p>
+<h2 data-i18n-en="Screening questionnaires">Kwestionariusze przesiewowe</h2>
+<p data-i18n-en="A collection of screening tools for quick psychological assessment.">Zbiór narzędzi przesiewowych do szybkiej oceny psychologicznej.</p>
 </div>
 <span class="arrow">→</span>
 </a>
 
 </div>
 
-<p class="section-label muted">Inne projekty</p>
+<p class="section-label muted" data-i18n-en="Other projects">Inne projekty</p>
 <div class="cards secondary">
 
 <a class="row" href="https://pwasiak30.github.io/tablice-rejestracyjne/" target="_blank" rel="noopener">
-<span class="row-title">Tablice rejestracyjne</span>
-<span class="row-desc">rozpoznawanie regionu po numerze</span>
+<span class="row-title" data-i18n-en="License plates">Tablice rejestracyjne</span>
+<span class="row-desc" data-i18n-en="region lookup by plate number">rozpoznawanie regionu po numerze</span>
 </a>
 
 <a class="row" href="https://pwasiak30.github.io/drzewo-genealogiczne/" target="_blank" rel="noopener">
-<span class="row-title">Drzewo genealogiczne</span>
-<span class="row-desc">rodzinne drzewo online</span>
+<span class="row-title" data-i18n-en="Family tree">Drzewo genealogiczne</span>
+<span class="row-desc" data-i18n-en="family tree online">rodzinne drzewo online</span>
 </a>
 
 <a class="row" href="https://pwasiak30.github.io/Wied-min-3-Kody-do-zbroi-i-rynsztunku/" target="_blank" rel="noopener">
-<span class="row-title">Wiedźmin 3 — kody</span>
-<span class="row-desc">zbroja i rynsztunek</span>
+<span class="row-title" data-i18n-en="Witcher 3 — codes">Wiedźmin 3 — kody</span>
+<span class="row-desc" data-i18n-en="armor and gear">zbroja i rynsztunek</span>
 </a>
 
 <a class="row" href="https://s3in610.github.io/witcher-chronology/" target="_blank" rel="noopener">
 <span class="row-title">Witcher Chronology</span>
-<span class="row-desc">chronologia wydarzeń w sadze</span>
+<span class="row-desc" data-i18n-en="timeline of events in the saga">chronologia wydarzeń w sadze</span>
 </a>
 
 <a class="row" href="https://pwasiak30.github.io/pdf-do-tekstu/" target="_blank" rel="noopener">
-<span class="row-title">PDF do tekstu</span>
-<span class="row-desc">konwersja PDF na tekst</span>
+<span class="row-title" data-i18n-en="PDF to text">PDF do tekstu</span>
+<span class="row-desc" data-i18n-en="PDF to text conversion">konwersja PDF na tekst</span>
 </a>
 
 <a class="row" href="https://pwasiak30.github.io/photo-guide/" target="_blank" rel="noopener">
 <span class="row-title">Photo Guide</span>
-<span class="row-desc">poradnik fotograficzny</span>
+<span class="row-desc" data-i18n-en="photography guide">poradnik fotograficzny</span>
 </a>
 
 <a class="row" href="https://pwasiak30.github.io/przelicznik-paliwa/" target="_blank" rel="noopener">
-<span class="row-title">Przelicznik paliwa</span>
-<span class="row-desc">kalkulator spalania i kosztów</span>
+<span class="row-title" data-i18n-en="Fuel converter">Przelicznik paliwa</span>
+<span class="row-desc" data-i18n-en="fuel consumption and cost calculator">kalkulator spalania i kosztów</span>
 </a>
 
 <a class="row" href="https://pwasiak30.github.io/linux-tracker/" target="_blank" rel="noopener">
 <span class="row-title">Linux Tracker</span>
-<span class="row-desc">śledzenie dystrybucji Linuksa</span>
+<span class="row-desc" data-i18n-en="tracking Linux distributions">śledzenie dystrybucji Linuksa</span>
 </a>
 
 <a class="row" href="https://pwasiak30.github.io/mecze/" target="_blank" rel="noopener">
-<span class="row-title">Mecze</span>
-<span class="row-desc">wyniki i terminarz</span>
+<span class="row-title" data-i18n-en="Matches">Mecze</span>
+<span class="row-desc" data-i18n-en="results and schedule">wyniki i terminarz</span>
 </a>
 
 </div>
 
-<p class="section-label muted">Profil</p>
+<p class="section-label muted" data-i18n-en="Profile">Profil</p>
 <div class="cards secondary">
 
 <a class="row" href="https://www.linkedin.com/in/pwasiak30" target="_blank" rel="noopener">
 <span class="row-title">LinkedIn</span>
-<span class="row-desc">doświadczenie i studia</span>
+<span class="row-desc" data-i18n-en="experience and education">doświadczenie i studia</span>
 </a>
 
 <a class="row" href="https://www.youtube.com/@psychologia.wasiak" target="_blank" rel="noopener">
 <span class="row-title">YouTube</span>
-<span class="row-desc">kanał o psychologii</span>
+<span class="row-desc" data-i18n-en="psychology channel">kanał o psychologii</span>
 </a>
 
 <a class="row" href="https://www.facebook.com/psychologia.wasiak" target="_blank" rel="noopener">
@@ -394,7 +461,7 @@ outline: none;
 
 <a class="row" href="https://github.com/pwasiak30" target="_blank" rel="noopener">
 <span class="row-title">GitHub</span>
-<span class="row-desc">kod i projekty</span>
+<span class="row-desc" data-i18n-en="code and projects">kod i projekty</span>
 </a>
 
 <a class="row" href="https://mastodon.social/@s3in610" target="_blank" rel="noopener">
@@ -404,17 +471,111 @@ outline: none;
 
 </div>
 
-<p class="section-label muted">Wsparcie</p>
+<p class="section-label muted" data-i18n-en="Support">Wsparcie</p>
 <div class="cards secondary">
 
 <a class="row accent-ochre" href="https://suppi.pl/pawelwasiak" target="_blank" rel="noopener">
-<span class="row-title">☕ Postaw mi kawę</span>
+<span class="row-title" data-i18n-en="☕ Buy me a coffee">☕ Postaw mi kawę</span>
 <span class="row-desc">Suppi</span>
 </a>
 
 </div>
 
-<footer>Brzeziny, woj. łódzkie</footer>
+<footer data-i18n-en="Brzeziny, Łódź Voivodeship, Poland">Brzeziny, woj. łódzkie</footer>
 </div>
+
+<script>
+(function () {
+"use strict";
+var STORAGE_KEY = "pref-lang";
+var htmlEl = document.documentElement;
+
+function capturePolishSnapshot() {
+document.querySelectorAll("[data-i18n-en]").forEach(function (el) {
+if (!el.hasAttribute("data-i18n-pl")) {
+el.setAttribute("data-i18n-pl", el.innerHTML);
+}
+});
+}
+
+function applyLang(lang) {
+document.querySelectorAll("[data-i18n-en]").forEach(function (el) {
+el.innerHTML = lang === "en" ? el.getAttribute("data-i18n-en") : el.getAttribute("data-i18n-pl");
+});
+document.querySelectorAll("[data-i18n-en-title]").forEach(function (el) {
+if (!el.hasAttribute("data-i18n-pl-title")) {
+el.setAttribute("data-i18n-pl-title", el.getAttribute("title") || "");
+}
+el.setAttribute("title", lang === "en" ? el.getAttribute("data-i18n-en-title") : el.getAttribute("data-i18n-pl-title"));
+});
+document.querySelectorAll("[data-tag-en]").forEach(function (el) {
+if (!el.hasAttribute("data-tag-pl")) {
+el.setAttribute("data-tag-pl", el.getAttribute("data-tag"));
+}
+el.setAttribute("data-tag", lang === "en" ? el.getAttribute("data-tag-en") : el.getAttribute("data-tag-pl"));
+});
+htmlEl.setAttribute("lang", lang);
+document.getElementById("lang-pl").setAttribute("aria-pressed", String(lang === "pl"));
+document.getElementById("lang-en").setAttribute("aria-pressed", String(lang === "en"));
+try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+}
+
+function detectDefaultLang() {
+var nav = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+return nav.indexOf("pl") === 0 ? "pl" : "en";
+}
+
+capturePolishSnapshot();
+
+var saved = null;
+try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
+var browserLang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+var isPlOrEn = browserLang.indexOf("pl") === 0 || browserLang.indexOf("en") === 0;
+var initialLang = saved || detectDefaultLang();
+applyLang(initialLang);
+
+document.getElementById("lang-pl").addEventListener("click", function () { applyLang("pl"); setGoogTrans(""); });
+document.getElementById("lang-en").addEventListener("click", function () { applyLang("en"); setGoogTrans(""); });
+
+/* --- Fallback: Google Translate dla języków innych niż PL/EN ---
+   Baza tekstu to PL/EN pisane ręcznie; dla pozostałych języków przeglądarki
+   podłączamy oficjalny widget Google Translate (tłumaczenie maszynowe). */
+function setGoogTrans(pair) {
+var expires = pair ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+document.cookie = "googtrans=" + pair + "; path=/" + expires;
+document.cookie = "googtrans=" + pair + "; path=/; domain=" + location.hostname + expires;
+}
+
+window.googleTranslateElementInit = function () {
+new google.translate.TranslateElement(
+{ pageLanguage: "en", autoDisplay: false },
+"google_translate_element"
+);
+};
+
+function loadGoogleTranslate() {
+if (document.getElementById("google-translate-script")) return;
+var s = document.createElement("script");
+s.id = "google-translate-script";
+s.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+document.body.appendChild(s);
+}
+
+document.getElementById("lang-more").addEventListener("click", function () {
+var box = document.getElementById("google_translate_element");
+box.classList.toggle("open");
+loadGoogleTranslate();
+});
+
+/* Jeśli język przeglądarki to nie PL ani EN, spróbuj automatycznie
+   przetłumaczyć stronę (z angielskiej bazy) na język odwiedzającego. */
+if (!saved && !isPlOrEn) {
+var target = browserLang.split("-")[0];
+applyLang("en");
+setGoogTrans("/en/" + target);
+loadGoogleTranslate();
+}
+})();
+</script>
 </body>
 </html>
