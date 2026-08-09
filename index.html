@@ -270,6 +270,48 @@ outline: none;
 .coffee-fab { transition: none; }
 .coffee-fab:hover, .coffee-fab:focus-visible { transform: none; }
 }
+/* --- Pływający pasek social media --- */
+.social-fab {
+position: fixed;
+z-index: 9999;
+left: 16px;
+bottom: 16px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 6px;
+background: rgba(27,36,48,0.7);
+backdrop-filter: blur(6px);
+border: 1px solid rgba(159,194,182,0.28);
+border-radius: 999px;
+padding: 8px 6px;
+}
+.social-fab a {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 32px;
+height: 32px;
+border-radius: 50%;
+color: var(--cream-muted);
+transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+.social-fab a:hover, .social-fab a:focus-visible {
+background: var(--teal);
+color: #FFF7EC;
+transform: translateY(-2px);
+outline: none;
+}
+.social-fab svg { width: 16px; height: 16px; fill: currentColor; display: block; }
+@media (max-width: 420px) {
+.social-fab { left: 10px; bottom: 10px; padding: 6px 5px; gap: 4px; }
+.social-fab a { width: 28px; height: 28px; }
+.social-fab svg { width: 14px; height: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+.social-fab a { transition: none; }
+.social-fab a:hover, .social-fab a:focus-visible { transform: none; }
+}
 /* --- Przełącznik języka --- */
 .lang-switch {
 position: fixed;
@@ -344,6 +386,31 @@ body { top: 0px !important; }
 <span class="coffee-icon">☕</span>
 <span class="coffee-label" data-i18n-en="Buy a coffee">Postaw kawę</span>
 </a>
+
+<nav class="social-fab" aria-label="Media społecznościowe">
+<a href="https://x.com/wasiak_dsm" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X (Twitter)">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+</a>
+<a href="https://www.linkedin.com/in/pwasiak30" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452z"/></svg>
+</a>
+<a href="https://www.youtube.com/@psychologia.wasiak" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg>
+</a>
+<a href="https://www.facebook.com/psychologia.wasiak" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.23 10.44 22v-7.02H7.9v-2.92h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.87h2.78l-.44 2.92h-2.34V22C18.34 21.23 22 17.08 22 12.06z"/></svg>
+</a>
+<a href="https://www.instagram.com/psychologia.wasiak/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.5.01-4.73.07-.96.04-1.48.2-1.83.34-.46.18-.79.39-1.13.74-.35.34-.56.67-.74 1.13-.14.35-.3.87-.34 1.83-.06 1.23-.07 1.58-.07 4.73s.01 3.5.07 4.73c.04.96.2 1.48.34 1.83.18.46.39.79.74 1.13.34.35.67.56 1.13.74.35.14.87.3 1.83.34 1.23.06 1.58.07 4.73.07s3.5-.01 4.73-.07c.96-.04 1.48-.2 1.83-.34.46-.18.79-.39 1.13-.74.35-.34.56-.67.74-1.13.14-.35.3-.87.34-1.83.06-1.23.07-1.58.07-4.73s-.01-3.5-.07-4.73c-.04-.96-.2-1.48-.34-1.83a3.02 3.02 0 0 0-.74-1.13 3.02 3.02 0 0 0-1.13-.74c-.35-.14-.87-.3-1.83-.34C15.5 4.01 15.15 4 12 4zm0 3.05a4.95 4.95 0 1 1 0 9.9 4.95 4.95 0 0 1 0-9.9zm0 1.8a3.15 3.15 0 1 0 0 6.3 3.15 3.15 0 0 0 0-6.3zm5.15-1.99a1.16 1.16 0 1 1-2.31 0 1.16 1.16 0 0 1 2.31 0z"/></svg>
+</a>
+<a href="https://github.com/pwasiak30" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.49-1.11-1.49-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.74 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 2.5-.35c.85 0 1.71.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.43.2 2.48.1 2.74.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.2C22 6.58 17.52 2 12 2z"/></svg>
+</a>
+<a href="https://mastodon.social/@s3in610" target="_blank" rel="noopener" title="Mastodon" aria-label="Mastodon">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.58 13.91c-.32 1.65-2.87 3.47-5.8 3.82-1.53.18-3.03.35-4.63.28-2.62-.12-4.69-.62-4.69-.62 0 .25.02.5.05.73.34 2.6 2.6 2.76 4.74 2.83 2.16.07 4.08-.53 4.08-.53l.09 1.96s-1.51.81-4.2.96c-1.48.08-3.32-.06-5.45-.63-4.63-1.23-5.42-6.18-5.55-11.2-.04-1.49-.02-2.9-.02-4.08 0-5.14 3.37-6.65 3.37-6.65C5.29.94 7.87.59 10.55.56h.07c2.68.03 5.26.38 6.94 1.19 0 0 3.37 1.51 3.37 6.65 0 0 .04 3.66-.35 5.51zM17.9 8.5c0-1.06-.27-1.9-.81-2.52-.56-.63-1.29-.95-2.21-.95-1.06 0-1.86.41-2.42 1.22l-.52.87-.52-.87c-.56-.81-1.36-1.22-2.42-1.22-.92 0-1.65.32-2.21.95-.54.62-.81 1.46-.81 2.52v4.98h2.09V8.66c0-1.06.44-1.6 1.33-1.6.98 0 1.47.63 1.47 1.88v2.72h2.07V8.94c0-1.25.49-1.88 1.47-1.88.89 0 1.33.54 1.33 1.6v4.82h2.09V8.5z"/></svg>
+</a>
+</nav>
+
 <div class="wrap">
 <header>
 <p class="eyebrow" data-i18n-en="Hi, I'm Paweł">Cześć, tu Paweł</p>
@@ -353,7 +420,7 @@ body { top: 0px !important; }
 
 <div class="cards featured">
 
-<a class="card featured-card" data-tag="Polecane" data-tag-en="Featured" href="https://pwasiak30.github.io/wolna-glowa/" target="_blank" rel="noopener">
+<a class="card featured-card" data-tag="Polecane" data-tag-en="Featured" href="https://wolnaglowa.wasiakpawel.pl/" target="_blank" rel="noopener">
 <div class="card-body">
 <h2 data-i18n-en="Free Mind">Wolna Głowa</h2>
 <p data-i18n-en="How to recognize a cult and group manipulation.">Jak rozpoznać sektę i manipulację grupową.</p>
@@ -374,7 +441,7 @@ body { top: 0px !important; }
 <span class="arrow">→</span>
 </a>
 
-<a class="card" data-tag="PWA · trzeźwość" data-tag-en="PWA · sobriety" href="https://pwasiak30.github.io/Nie-pij-dzis/" target="_blank" rel="noopener">
+<a class="card" data-tag="PWA · trzeźwość" data-tag-en="PWA · sobriety" href="https://niepijdzis.wasiakpawel.pl/" target="_blank" rel="noopener">
 <div class="card-body">
 <h2 data-i18n-en="Don't-drink-today">Nie-pij-dzisiaj</h2>
 <p data-i18n-en="Craving journal, weekend plan, 12 steps — offline.">Dziennik głodu, plan na weekend, 12 kroków — offline.</p>
@@ -382,7 +449,7 @@ body { top: 0px !important; }
 <span class="arrow">→</span>
 </a>
 
-<a class="card accent-ochre" data-tag="Narzędzie kliniczne" data-tag-en="Clinical tool" href="https://pwasiak30.github.io/icd11-dsm5-search/" target="_blank" rel="noopener">
+<a class="card accent-ochre" data-tag="Narzędzie kliniczne" data-tag-en="Clinical tool" href="http://icddsm.wasiakpawel.pl/" target="_blank" rel="noopener">
 <div class="card-body">
 <h2>ICD-11 / DSM-5 Search</h2>
 <p data-i18n-en="Fast lookup of diagnostic criteria.">Szybkie wyszukiwanie kryteriów diagnostycznych.</p>
@@ -390,7 +457,7 @@ body { top: 0px !important; }
 <span class="arrow">→</span>
 </a>
 
-<a class="card accent-ochre" data-tag="AAC" data-tag-en="AAC" href="https://pwasiak30.github.io/aac-generator/" target="_blank" rel="noopener">
+<a class="card accent-ochre" data-tag="AAC" data-tag-en="AAC" href="http://aacgenerator.wasiakpawel.pl/" target="_blank" rel="noopener">
 <div class="card-body">
 <h2 data-i18n-en="AAC Generator">AAC Generator</h2>
 <p data-i18n-en="Communication card generator based on ARASAAC.">Generator kart komunikacyjnych opartych na ARASAAC.</p>
@@ -398,7 +465,7 @@ body { top: 0px !important; }
 <span class="arrow">→</span>
 </a>
 
-<a class="card" data-tag="TUS" data-tag-en="TUS" href="https://pwasiak30.github.io/tus-planner/" target="_blank" rel="noopener">
+<a class="card" data-tag="TUS" data-tag-en="TUS" href="http://tusplanner.wasiakpawel.pl/" target="_blank" rel="noopener">
 <div class="card-body">
 <h2 data-i18n-en="TUS Planner">TUS Planner</h2>
 <p data-i18n-en="A tool for planning Social Skills Training (TUS) sessions.">Narzędzie do planowania zajęć Treningu Umiejętności Społecznych.</p>
@@ -406,7 +473,7 @@ body { top: 0px !important; }
 <span class="arrow">→</span>
 </a>
 
-<a class="card accent-ochre" data-tag="Narzędzie kliniczne" data-tag-en="Clinical tool" href="https://pwasiak30.github.io/kwestionariusze-przesiewowe/" target="_blank" rel="noopener">
+<a class="card accent-ochre" data-tag="Narzędzie kliniczne" data-tag-en="Clinical tool" href="https://kwestionariusze.wasiakpawel.pl/" target="_blank" rel="noopener">
 <div class="card-body">
 <h2 data-i18n-en="Screening questionnaires">Kwestionariusze przesiewowe</h2>
 <p data-i18n-en="A collection of screening tools for quick psychological assessment.">Zbiór narzędzi przesiewowych do szybkiej oceny psychologicznej.</p>
@@ -468,6 +535,11 @@ body { top: 0px !important; }
 
 <p class="section-label muted" data-i18n-en="Profile">Profil</p>
 <div class="cards secondary">
+
+<a class="row" href="https://x.com/wasiak_dsm" target="_blank" rel="noopener">
+<span class="row-title">X</span>
+<span class="row-desc">@wasiak_dsm</span>
+</a>
 
 <a class="row" href="https://www.linkedin.com/in/pwasiak30" target="_blank" rel="noopener">
 <span class="row-title">LinkedIn</span>
