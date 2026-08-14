@@ -4,594 +4,644 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n-en="Paweł Wasiak — links">Paweł Wasiak — linki</title>
+<meta name="description" content="Psycholog buduje narzędzia, które pomagają — psychoedukacja, kwestionariusze, projekty open source." data-i18n-en-content="A psychologist building tools that help — psychoeducation, screening tools, open-source projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<!-- ==========================================================================
+     STYLEGUIDE.CSS — wasiakpawel.pl / ekosystem subdomen (wklejony inline 1:1
+     z pliku wzorcowego projektu, żeby strona pozostała jednym samodzielnym
+     plikiem). Zawiera też style social-links / social-fab (wersja statyczna,
+     bez rozwijania — jak na wasiakpawel.pl).
+     ========================================================================== -->
 <style>
-:root {
---navy: #1B2430;
---paper: #EFE3C8;
---paper-tab: #E2D3AE;
---paper-flat: #E6DAC0;
---ink: #2A2620;
---ink-soft: #55503F;
---teal: #4E7C6E;
---teal-pale: #9FC2B6;
---ochre: #B5794A;
---cream-text: #F0EAD8;
---cream-muted: #B9BFC9;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root{
+  --teal-900:#0f2e2b;
+  --teal-700:#155e56;
+  --teal-600:#1a7a70;
+  --teal-500:#20998c;
+  --teal-100:#e4f5f2;
+
+  --coral:#ff6f59;
+  --coral-dark:#e8543f;
+  --amber:#f5a623;
+  --amber-dark:#d6890a;
+  --red:#e34b4b;
+  --red-dark:#c53737;
+  --green:#3bab72;
+  --green-dark:#2c8a5a;
+
+  --ink:#1c2b29;
+  --ink-soft:#4a5c59;
+  --paper:#fbfaf7;
+  --card:#ffffff;
+  --line:#e4e0d8;
+
+  --shadow: 0 10px 30px rgba(15,46,43,0.08);
+  --radius: 20px;
+  --radius-sm: 12px;
+  --radius-pill: 999px;
+
+  --font-heading: 'Poppins', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  color-scheme: light;
 }
-* { box-sizing: border-box; }
-html, body {
-margin: 0;
-padding: 0;
-background: var(--navy);
-background-image:
-radial-gradient(ellipse at 50% -10%, rgba(78,124,110,0.16), transparent 60%),
-radial-gradient(circle, rgba(240,234,216,0.05) 1px, transparent 1px);
-background-size: auto, 28px 28px;
-background-position: 0 0, 0 0;
-color: var(--cream-text);
-font-family: 'Work Sans', sans-serif;
-min-height: 100vh;
+@media (prefers-color-scheme: dark){
+  :root{
+    --teal-900:#e4f5f2; --teal-700:#5fd6c6; --teal-600:#3cc0ae; --teal-500:#20998c; --teal-100:#173330;
+    --coral:#ff8a72; --coral-dark:#ff6f59; --amber:#f7b84d; --amber-dark:#f5a623;
+    --red:#f0716f; --red-dark:#e34b4b; --green:#57c98a; --green-dark:#3bab72;
+    --ink:#f2f0ea; --ink-soft:#b7c3c0; --paper:#12201e; --card:#182b28; --line:#28403c;
+    --shadow: 0 10px 30px rgba(0,0,0,0.35); color-scheme: dark;
+  }
 }
-.wrap {
-max-width: 560px;
-margin: 0 auto;
-padding: 72px 24px 56px;
+:root[data-theme="dark"]{
+  --teal-900:#e4f5f2; --teal-700:#5fd6c6; --teal-600:#3cc0ae; --teal-500:#20998c; --teal-100:#173330;
+  --coral:#ff8a72; --coral-dark:#ff6f59; --amber:#f7b84d; --amber-dark:#f5a623;
+  --red:#f0716f; --red-dark:#e34b4b; --green:#57c98a; --green-dark:#3bab72;
+  --ink:#f2f0ea; --ink-soft:#b7c3c0; --paper:#12201e; --card:#182b28; --line:#28403c;
+  --shadow: 0 10px 30px rgba(0,0,0,0.35); color-scheme: dark;
 }
-header { margin-bottom: 44px; }
-.eyebrow {
-font-family: 'IBM Plex Mono', monospace;
-font-size: 12px;
-letter-spacing: 0.14em;
-text-transform: uppercase;
-color: var(--teal-pale);
-margin: 0 0 14px;
+:root[data-theme="light"]{
+  --teal-900:#0f2e2b; --teal-700:#155e56; --teal-600:#1a7a70; --teal-500:#20998c; --teal-100:#e4f5f2;
+  --coral:#ff6f59; --coral-dark:#e8543f; --amber:#f5a623; --amber-dark:#d6890a;
+  --red:#e34b4b; --red-dark:#c53737; --green:#3bab72; --green-dark:#2c8a5a;
+  --ink:#1c2b29; --ink-soft:#4a5c59; --paper:#fbfaf7; --card:#ffffff; --line:#e4e0d8;
+  --shadow: 0 10px 30px rgba(15,46,43,0.08); color-scheme: light;
 }
-h1 {
-font-family: 'Fraunces', serif;
-font-weight: 600;
-font-size: clamp(2.1rem, 6vw, 2.9rem);
-line-height: 1.05;
-margin: 0 0 14px;
-color: var(--cream-text);
-letter-spacing: -0.01em;
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
 }
-.tagline {
-font-size: 16px;
-line-height: 1.55;
-color: var(--cream-muted);
-max-width: 42ch;
-margin: 0;
+img,svg,video{ max-width:100%; display:block; }
+
+h1,h2,h3,h4{
+  font-family:var(--font-heading);
+  line-height:1.2;
+  margin:0 0 .5em 0;
+  color:var(--ink);
 }
-.section-label {
-display: flex;
-align-items: center;
-gap: 12px;
-font-family: 'IBM Plex Mono', monospace;
-font-size: 11px;
-letter-spacing: 0.12em;
-text-transform: uppercase;
-color: var(--teal-pale);
-margin: 40px 0 18px;
+h1{ font-size:clamp(1.9rem, 4vw, 2.8rem); font-weight:800; }
+h2{ font-size:clamp(1.5rem, 3vw, 2.1rem); font-weight:700; }
+h3{ font-size:1.25rem; font-weight:700; }
+h4{ font-size:1.05rem; font-weight:600; }
+p{ margin:0 0 1em 0; }
+a{ color:var(--teal-600); }
+small,.text-sm{ font-size:13.5px; color:var(--ink-soft); }
+
+.wrap{ max-width:920px; margin:0 auto; padding:0 20px; }
+.wrap-narrow{ max-width:720px; margin:0 auto; padding:0 20px; }
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  font-family:var(--font-body); font-weight:600; font-size:15px;
+  padding:14px 26px; border-radius:var(--radius-pill);
+  text-decoration:none; cursor:pointer; border:2px solid transparent;
+  transition:background .15s ease, transform .1s ease, box-shadow .15s ease;
 }
-.section-label:first-of-type { margin-top: 0; }
-.section-label::after {
-content: "";
-flex: 1;
-height: 1px;
-background: rgba(159,194,182,0.25);
+.btn:active{ transform:scale(.97); }
+.btn-primary{ background:var(--coral); color:#fff; }
+.btn-primary:hover{ background:var(--coral-dark); }
+.btn-secondary{ background:var(--teal-600); color:#fff; }
+.btn-secondary:hover{ background:var(--teal-700); }
+.btn-ghost{ background:transparent; color:var(--teal-700); border-color:var(--teal-600); }
+.btn-ghost:hover{ background:var(--teal-100); }
+.btn-wide{ width:100%; }
+.btn[disabled]{ opacity:.4; cursor:not-allowed; }
+
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  box-shadow:var(--shadow); padding:24px;
 }
-.section-label.muted { color: var(--cream-muted); }
-.section-label.muted::after { background: rgba(185,191,201,0.18); }
-.cards {
-display: flex;
-flex-direction: column;
-gap: 20px;
+.chip{
+  display:inline-block; background:var(--teal-100); color:var(--teal-700);
+  padding:6px 14px; border-radius:var(--radius-pill); font-size:13px; font-weight:600;
 }
-.card {
-position: relative;
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 16px;
-background: var(--paper);
-color: var(--ink);
-text-decoration: none;
-padding: 22px 24px 20px;
-border-radius: 3px;
-box-shadow: 0 6px 14px rgba(0,0,0,0.28), 0 1px 0 rgba(255,255,255,0.06) inset;
-transition: transform 0.22s ease, box-shadow 0.22s ease;
+
+input,textarea,select{
+  font-family:var(--font-body); font-size:15px; color:var(--ink);
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius-sm);
+  padding:10px 14px; width:100%;
 }
-.card:focus-visible {
-outline: 2px solid var(--teal-pale);
-outline-offset: 3px;
+input:focus,textarea:focus,select:focus{ outline:2px solid var(--teal-500); outline-offset:1px; }
+label{ font-weight:600; font-size:14px; display:block; margin-bottom:6px; }
+
+/* --- Social links (row + FAB), z social-links-component.html --- */
+.social-links{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:0; padding:0; list-style:none; }
+.social-links a{
+  display:flex; align-items:center; justify-content:center;
+  width:36px; height:36px; border-radius:50%;
+  background:var(--teal-100); color:var(--teal-700);
+  transition:background .15s ease, color .15s ease, transform .15s ease;
 }
-.card::before {
-content: attr(data-tag);
-position: absolute;
-top: -11px;
-left: 20px;
-background: var(--paper-tab);
-color: var(--ink-soft);
-font-family: 'IBM Plex Mono', monospace;
-font-size: 10px;
-letter-spacing: 0.09em;
-text-transform: uppercase;
-padding: 4px 9px 3px;
-border-radius: 2px 2px 0 0;
-box-shadow: 0 -1px 0 rgba(0,0,0,0.08) inset;
+.social-links a:hover{ background:var(--teal-600); color:#fff; transform:translateY(-2px); }
+.social-links svg{ width:17px; height:17px; fill:currentColor; flex:none; }
+
+/* Pływający pasek social media — zawsze widoczny, bez rozwijania (jak na wasiakpawel.pl) */
+.social-fab{
+  position:fixed; left:18px; bottom:18px; z-index:998;
+  display:flex; flex-direction:column; align-items:center; gap:6px;
+  background:color-mix(in srgb, var(--card) 82%, transparent);
+  backdrop-filter:blur(8px);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:8px 6px;
+  box-shadow:var(--shadow);
 }
-.cards.primary .card:nth-child(1) { transform: rotate(-0.6deg); }
-.cards.primary .card:nth-child(2) { transform: rotate(0.5deg); }
-.cards.primary .card:nth-child(3) { transform: rotate(-0.3deg); }
-.cards.primary .card:nth-child(4) { transform: rotate(0.7deg); }
-.cards.primary .card:nth-child(5) { transform: rotate(-0.5deg); }
-.cards.primary .card:nth-child(6) { transform: rotate(0.35deg); }
-.cards.primary .card:nth-child(7) { transform: rotate(-0.4deg); }
-.cards.primary .card:hover, .cards.primary .card:focus-visible {
-transform: rotate(0deg) translateY(-4px);
-box-shadow: 0 12px 22px rgba(0,0,0,0.34), 0 1px 0 rgba(255,255,255,0.08) inset;
+.social-fab a{
+  display:flex; align-items:center; justify-content:center;
+  width:32px; height:32px; border-radius:50%;
+  color:var(--ink-soft);
+  transition:background .18s ease, color .18s ease, transform .18s ease;
 }
-.card-body h2 {
-font-family: 'Fraunces', serif;
-font-weight: 500;
-font-size: 19px;
-margin: 6px 0 5px;
-color: var(--ink);
+.social-fab a:hover{ background:var(--teal-600); color:#fff; transform:translateY(-2px); }
+.social-fab svg{ width:15px; height:15px; fill:currentColor; display:block; }
+.social-fab .emoji{ font-size:.85rem; line-height:1; }
+@media (max-width:640px){ .social-fab{ display:none; } }
+
+/* Przycisk wsparcia (Suppi) — zawsze widoczny, jak na wasiakpawel.pl */
+.coffee-fab{
+  position:fixed; z-index:999; right:20px; bottom:20px;
+  display:flex; align-items:center; gap:8px;
+  background:var(--coral); color:#fff;
+  font-weight:700; font-size:14px;
+  padding:12px 20px; border-radius:999px;
+  box-shadow:var(--shadow);
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
-.card-body p {
-font-size: 14px;
-line-height: 1.45;
-color: var(--ink-soft);
-margin: 0;
-max-width: 34ch;
+.coffee-fab:hover, .coffee-fab:focus-visible{ transform:translateY(-2px); background:var(--coral-dark); outline:none; }
+.coffee-fab .coffee-icon{ font-size:1.05rem; line-height:1; }
+@media (max-width:640px){ .coffee-fab{ display:none; } }
+
+/* ==========================================================================
+   TOPBAR — 1:1 z topbar-component.html, rozszerzony o przełącznik PL/EN
+   i motywu jasny/ciemny (własne, zbudowane na tych samych zmiennych).
+   ========================================================================== */
+.topbar{
+  position:sticky; top:0; z-index:999;
+  background:color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
 }
-.arrow {
-flex-shrink: 0;
-font-family: 'IBM Plex Mono', monospace;
-font-size: 20px;
-color: var(--teal);
-transition: transform 0.22s ease;
+.topbar-inner{
+  max-width:920px; margin:0 auto; padding:12px 20px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  flex-wrap:wrap;
 }
-.card:hover .arrow, .card:focus-visible .arrow { transform: translateX(4px); }
-.card.accent-ochre::before { color: #6E4A2A; }
-.card.accent-ochre .arrow { color: var(--ochre); }
-/* wyróżniona karta na samej górze */
-.cards.featured { margin-bottom: 40px; }
-.card.featured-card {
-transform: none;
-background: linear-gradient(155deg, var(--paper) 0%, var(--paper) 55%, #F3E9CE 100%);
-border: 1.5px solid var(--teal);
-box-shadow: 0 0 0 4px rgba(78,124,110,0.14), 0 10px 24px rgba(0,0,0,0.34), 0 1px 0 rgba(255,255,255,0.08) inset;
-animation: featured-glow 3.2s ease-in-out infinite;
+.topbar-brand{
+  display:flex; align-items:center; gap:8px;
+  font-family:var(--font-heading, 'Poppins', sans-serif);
+  font-weight:700; font-size:15px;
+  color:var(--teal-900); text-decoration:none;
 }
-.card.featured-card::before {
-background: var(--teal);
-color: #FFF7EC;
+.topbar-brand:hover{ color:var(--teal-700); }
+.topbar-brand .dot{ width:9px; height:9px; border-radius:50%; background:var(--coral); flex:none; }
+.topbar-links{ display:flex; align-items:center; gap:16px; list-style:none; margin:0; padding:0; }
+.topbar-links a{
+  color:var(--ink-soft); text-decoration:none; font-weight:600; font-size:13.5px;
+  font-family:var(--font-body, 'Inter', sans-serif);
+  padding:6px 10px; border-radius:999px; transition:background .15s ease, color .15s ease;
 }
-.card.featured-card .card-body h2 { font-size: 21px; }
-.card.featured-card .arrow { color: var(--teal); font-size: 22px; }
-.card.featured-card:hover, .card.featured-card:focus-visible {
-transform: translateY(-4px);
-box-shadow: 0 0 0 4px rgba(78,124,110,0.22), 0 14px 28px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.1) inset;
+.topbar-links a:hover{ background:var(--teal-100); color:var(--teal-700); }
+.topbar-links a.is-accent{ background:var(--coral); color:#fff; }
+.topbar-links a.is-accent:hover{ background:var(--coral-dark); color:#fff; }
+
+.topbar-tools{ display:flex; align-items:center; gap:4px; margin-left:4px; padding-left:10px; border-left:1px solid var(--line); }
+.topbar-tools button{
+  appearance:none; border:none; background:transparent; color:var(--ink-soft);
+  font-family:var(--font-mono); font-size:12px; font-weight:600; letter-spacing:.03em;
+  padding:6px 9px; border-radius:999px; cursor:pointer; transition:background .15s ease, color .15s ease;
 }
-@keyframes featured-glow {
-0%, 100% { box-shadow: 0 0 0 4px rgba(78,124,110,0.14), 0 10px 24px rgba(0,0,0,0.34), 0 1px 0 rgba(255,255,255,0.08) inset; }
-50% { box-shadow: 0 0 0 7px rgba(78,124,110,0.22), 0 10px 24px rgba(0,0,0,0.34), 0 1px 0 rgba(255,255,255,0.08) inset; }
+.topbar-tools button:hover{ background:var(--teal-100); color:var(--teal-700); }
+.topbar-tools button[aria-pressed="true"]{ background:var(--teal-600); color:#fff; }
+.topbar-tools button:focus-visible{ outline:2px solid var(--teal-500); outline-offset:2px; }
+#google_translate_element{ display:none; }
+#google_translate_element.open{
+  display:block; position:absolute; right:20px; top:100%; margin-top:6px;
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius-sm);
+  box-shadow:var(--shadow); padding:8px; z-index:1000;
 }
-@media (prefers-reduced-motion: reduce) {
-.card.featured-card { animation: none; }
+.goog-te-gadget{ font-family:var(--font-body) !important; }
+body > .skiptranslate.goog-te-gadget{ display:none !important; }
+.goog-te-banner-frame{ display:none !important; }
+body{ top:0px !important; }
+
+@media (max-width:640px){
+  .topbar-inner{ padding:10px 14px; }
+  .topbar-brand{ font-size:14px; }
+  .topbar-links a{ font-size:12px; padding:5px 8px; }
+  .topbar-tools{ padding-left:6px; margin-left:2px; }
 }
-/* secondary (mniej ważne / hobby) — płaskie, kompaktowe wiersze */
-.cards.secondary { gap: 10px; }
-.row {
-display: flex;
-align-items: baseline;
-justify-content: space-between;
-gap: 14px;
-background: var(--paper-flat);
-color: var(--ink);
-text-decoration: none;
-padding: 13px 18px;
-border-radius: 3px;
-box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-transition: transform 0.18s ease, box-shadow 0.18s ease;
+
+/* ==========================================================================
+   TREŚĆ STRONY — linktree (rozszerzenia specyficzne dla tej podstrony,
+   zbudowane wyłącznie na zmiennych ze styleguide.css)
+   ========================================================================== */
+header.hero{ padding:56px 0 40px; }
+.eyebrow{
+  font-family:var(--font-mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--teal-600); margin:0 0 14px;
 }
-.row:hover, .row:focus-visible {
-transform: translateY(-2px);
-box-shadow: 0 6px 14px rgba(0,0,0,0.26);
+.tagline{ font-size:16.5px; color:var(--ink-soft); max-width:56ch; }
+.hero-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; }
+
+.section{ margin:52px 0; }
+.section-head{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:8px; flex-wrap:wrap; }
+.section-head h2{ margin-bottom:0; }
+.section-note{ color:var(--ink-soft); font-size:15px; max-width:64ch; margin:6px 0 24px; }
+
+.grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; }
+@media (max-width:640px){ .grid{ grid-template-columns:1fr; } }
+
+.link-card{
+  display:flex; flex-direction:column; gap:10px; text-decoration:none; height:100%;
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  box-shadow:var(--shadow); padding:22px; transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
-.row:focus-visible { outline: 2px solid var(--teal-pale); outline-offset: 3px; }
-.row-title {
-font-family: 'Work Sans', sans-serif;
-font-weight: 500;
-font-size: 15px;
-color: var(--ink);
+.link-card:hover, .link-card:focus-visible{
+  transform:translateY(-3px); border-color:var(--teal-500);
+  box-shadow:0 14px 34px rgba(15,46,43,0.14);
 }
-.row-desc {
-font-size: 12.5px;
-color: var(--ink-soft);
-flex-shrink: 0;
+.link-card:focus-visible{ outline:2px solid var(--teal-500); outline-offset:2px; }
+.link-card .chip{ align-self:flex-start; }
+.link-card h3{ margin:2px 0 0; color:var(--ink); }
+.link-card p{ margin:0; color:var(--ink-soft); font-size:14.5px; flex:1; }
+.link-card .go{ font-family:var(--font-mono); font-size:13px; color:var(--teal-600); display:flex; align-items:center; gap:6px; }
+.link-card:hover .go{ color:var(--teal-700); }
+
+.link-card.featured{
+  border:1.5px solid var(--coral);
+  background:linear-gradient(160deg, var(--card) 0%, var(--card) 60%, color-mix(in srgb, var(--coral) 7%, var(--card)) 100%);
+  box-shadow:0 0 0 4px color-mix(in srgb, var(--coral) 14%, transparent), var(--shadow);
 }
-.row.accent-ochre {
-background: var(--paper-tab);
-border-left: 3px solid var(--ochre);
-padding-left: 15px;
+.link-card.featured .chip{ background:var(--coral); color:#fff; }
+.link-card.featured .go{ color:var(--coral); font-weight:600; }
+.link-card.featured:hover{ box-shadow:0 0 0 4px color-mix(in srgb, var(--coral) 20%, transparent), 0 14px 34px rgba(15,46,43,0.18); }
+
+.rows{ display:flex; flex-direction:column; gap:10px; }
+.row{
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius-sm);
+  padding:14px 18px; text-decoration:none; transition:transform .15s ease, border-color .15s ease;
 }
-.row.accent-ochre .row-title { color: #6E4A2A; }
-footer {
-margin-top: 52px;
-font-family: 'IBM Plex Mono', monospace;
-font-size: 11px;
-letter-spacing: 0.06em;
-color: var(--cream-muted);
-opacity: 0.6;
+.row:hover, .row:focus-visible{ transform:translateY(-2px); border-color:var(--teal-500); }
+.row:focus-visible{ outline:2px solid var(--teal-500); outline-offset:2px; }
+.row-title{ font-weight:600; font-size:15px; color:var(--ink); }
+.row-desc{ font-size:13px; color:var(--ink-soft); }
+.row.is-primary{ border-color:var(--teal-600); background:var(--teal-100); }
+.row.is-primary .row-title{ color:var(--teal-900); }
+.row.is-accent{ border-color:var(--coral); background:color-mix(in srgb, var(--coral) 8%, var(--card)); }
+.row.is-accent .row-title{ color:var(--coral-dark); }
+
+.footer-social{ margin:56px 0 18px; display:flex; justify-content:center; }
+footer.site-footer{
+  margin:0 0 90px; text-align:center;
+  font-family:var(--font-mono); font-size:12px; color:var(--ink-soft); opacity:.75;
 }
-@media (prefers-reduced-motion: reduce) {
-.card, .arrow, .row { transition: none; }
-.card:hover, .card:focus-visible, .row:hover, .row:focus-visible { transform: none; }
+@media (prefers-reduced-motion: reduce){
+  .link-card, .row{ transition:none; }
+  .link-card:hover, .row:hover{ transform:none; }
 }
-@media (max-width: 420px) {
-.card { padding: 20px 18px 18px; }
-.card-body p { max-width: 26ch; }
-.row { flex-direction: column; align-items: flex-start; gap: 3px; }
-}
-/* --- Przycisk wsparcia (Suppi) — zawsze widoczny --- */
-.coffee-fab {
-position: fixed;
-z-index: 9999;
-display: flex;
-align-items: center;
-gap: 8px;
-right: 16px;
-bottom: 16px;
-background: var(--ochre);
-color: #FFF7EC;
-text-decoration: none;
-font-family: 'Work Sans', sans-serif;
-font-size: 14px;
-font-weight: 600;
-padding: 11px 16px;
-border-radius: 999px;
-box-shadow: 0 6px 16px rgba(0,0,0,0.28);
-transition: transform 0.18s ease, box-shadow 0.18s ease;
-}
-.coffee-fab:hover, .coffee-fab:focus-visible {
-transform: translateY(-2px);
-box-shadow: 0 9px 20px rgba(0,0,0,0.34);
-outline: none;
-}
-.coffee-fab .coffee-icon { font-size: 16px; line-height: 1; }
-@media (max-width: 420px) {
-.coffee-fab { right: 12px; bottom: 12px; padding: 10px 14px; font-size: 13px; }
-}
-@media (prefers-reduced-motion: reduce) {
-.coffee-fab { transition: none; }
-.coffee-fab:hover, .coffee-fab:focus-visible { transform: none; }
-}
-/* --- Pływający pasek social media --- */
-.social-fab {
-position: fixed;
-z-index: 9999;
-left: 16px;
-bottom: 16px;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 6px;
-background: rgba(27,36,48,0.7);
-backdrop-filter: blur(6px);
-border: 1px solid rgba(159,194,182,0.28);
-border-radius: 999px;
-padding: 8px 6px;
-}
-.social-fab a {
-display: flex;
-align-items: center;
-justify-content: center;
-width: 32px;
-height: 32px;
-border-radius: 50%;
-color: var(--cream-muted);
-transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease;
-}
-.social-fab a:hover, .social-fab a:focus-visible {
-background: var(--teal);
-color: #FFF7EC;
-transform: translateY(-2px);
-outline: none;
-}
-.social-fab svg { width: 16px; height: 16px; fill: currentColor; display: block; }
-@media (max-width: 420px) {
-.social-fab { left: 10px; bottom: 10px; padding: 6px 5px; gap: 4px; }
-.social-fab a { width: 28px; height: 28px; }
-.social-fab svg { width: 14px; height: 14px; }
-}
-@media (prefers-reduced-motion: reduce) {
-.social-fab a { transition: none; }
-.social-fab a:hover, .social-fab a:focus-visible { transform: none; }
-}
-/* --- Przełącznik języka --- */
-.lang-switch {
-position: fixed;
-z-index: 9999;
-top: 16px;
-right: 16px;
-display: flex;
-align-items: center;
-gap: 4px;
-background: rgba(27,36,48,0.7);
-backdrop-filter: blur(6px);
-border: 1px solid rgba(159,194,182,0.28);
-border-radius: 999px;
-padding: 4px;
-font-family: 'IBM Plex Mono', monospace;
-font-size: 11px;
-letter-spacing: 0.05em;
-}
-.lang-switch button {
-appearance: none;
-border: none;
-background: transparent;
-color: var(--cream-muted);
-padding: 6px 11px;
-border-radius: 999px;
-cursor: pointer;
-font-family: inherit;
-font-size: inherit;
-letter-spacing: inherit;
-transition: background 0.18s ease, color 0.18s ease;
-}
-.lang-switch button:hover { color: var(--cream-text); }
-.lang-switch button[aria-pressed="true"] {
-background: var(--teal);
-color: #FFF7EC;
-}
-.lang-switch button:focus-visible {
-outline: 2px solid var(--teal-pale);
-outline-offset: 2px;
-}
-.lang-switch .lang-more {
-color: var(--teal-pale);
-font-size: 13px;
-padding: 6px 8px;
-}
-@media (max-width: 420px) {
-.lang-switch { top: 10px; right: 10px; }
-}
-#google_translate_element {
-position: fixed;
-top: 58px;
-right: 16px;
-z-index: 9998;
-display: none;
-}
-#google_translate_element.open { display: block; }
-.goog-te-gadget { font-family: 'Work Sans', sans-serif !important; }
-body > .skiptranslate.goog-te-gadget { display: none !important; }
-.goog-te-banner-frame { display: none !important; }
-body { top: 0px !important; }
 </style>
 </head>
 <body>
-<div class="lang-switch" role="group" aria-label="Language / Język">
-<button type="button" id="lang-pl" aria-pressed="false">PL</button>
-<button type="button" id="lang-en" aria-pressed="false">EN</button>
-<button type="button" class="lang-more" id="lang-more" title="Other languages / inne języki (Google Translate)">🌐</button>
-</div>
-<div id="google_translate_element"></div>
 
-<a class="coffee-fab" href="https://suppi.pl/pawelwasiak" target="_blank" rel="noopener" title="Postaw mi kawę na Suppi" data-i18n-en-title="Buy me a coffee on Suppi">
-<span class="coffee-icon">☕</span>
-<span class="coffee-label" data-i18n-en="Buy a coffee">Postaw kawę</span>
-</a>
-
-<nav class="social-fab" aria-label="Media społecznościowe">
-<a href="https://x.com/wasiak_dsm" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X (Twitter)">
-<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-</a>
-<a href="https://www.linkedin.com/in/pwasiak30" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
-<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452z"/></svg>
-</a>
-<a href="https://www.youtube.com/@psychologia.wasiak" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">
-<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5 6.2a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3.02 3.02 0 0 0 2.12 2.14C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.6 15.6V8.4l6.4 3.6-6.4 3.6z"/></svg>
-</a>
-<a href="https://www.facebook.com/psychologia.wasiak" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
-<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06C2 17.08 5.66 21.23 10.44 22v-7.02H7.9v-2.92h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.78-1.63 1.57v1.87h2.78l-.44 2.92h-2.34V22C18.34 21.23 22 17.08 22 12.06z"/></svg>
-</a>
-<a href="https://www.instagram.com/psychologia.wasiak/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
-<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2zm0 1.8c-3.15 0-3.5.01-4.73.07-.96.04-1.48.2-1.83.34-.46.18-.79.39-1.13.74-.35.34-.56.67-.74 1.13-.14.35-.3.87-.34 1.83-.06 1.23-.07 1.58-.07 4.73s.01 3.5.07 4.73c.04.96.2 1.48.34 1.83.18.46.39.79.74 1.13.34.35.67.56 1.13.74.35.14.87.3 1.83.34 1.23.06 1.58.07 4.73.07s3.5-.01 4.73-.07c.96-.04 1.48-.2 1.83-.34.46-.18.79-.39 1.13-.74.35-.34.56-.67.74-1.13.14-.35.3-.87.34-1.83.06-1.23.07-1.58.07-4.73s-.01-3.5-.07-4.73c-.04-.96-.2-1.48-.34-1.83a3.02 3.02 0 0 0-.74-1.13 3.02 3.02 0 0 0-1.13-.74c-.35-.14-.87-.3-1.83-.34C15.5 4.01 15.15 4 12 4zm0 3.05a4.95 4.95 0 1 1 0 9.9 4.95 4.95 0 0 1 0-9.9zm0 1.8a3.15 3.15 0 1 0 0 6.3 3.15 3.15 0 0 0 0-6.3zm5.15-1.99a1.16 1.16 0 1 1-2.31 0 1.16 1.16 0 0 1 2.31 0z"/></svg>
-</a>
-<a href="https://github.com/pwasiak30" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
-<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.11-1.49-1.11-1.49-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.74 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 2.5-.35c.85 0 1.71.12 2.5.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.43.2 2.48.1 2.74.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.81 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.2C22 6.58 17.52 2 12 2z"/></svg>
-</a>
-<a href="https://mastodon.social/@s3in610" target="_blank" rel="noopener" title="Mastodon" aria-label="Mastodon">
-<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.58 13.91c-.32 1.65-2.87 3.47-5.8 3.82-1.53.18-3.03.35-4.63.28-2.62-.12-4.69-.62-4.69-.62 0 .25.02.5.05.73.34 2.6 2.6 2.76 4.74 2.83 2.16.07 4.08-.53 4.08-.53l.09 1.96s-1.51.81-4.2.96c-1.48.08-3.32-.06-5.45-.63-4.63-1.23-5.42-6.18-5.55-11.2-.04-1.49-.02-2.9-.02-4.08 0-5.14 3.37-6.65 3.37-6.65C5.29.94 7.87.59 10.55.56h.07c2.68.03 5.26.38 6.94 1.19 0 0 3.37 1.51 3.37 6.65 0 0 .04 3.66-.35 5.51zM17.9 8.5c0-1.06-.27-1.9-.81-2.52-.56-.63-1.29-.95-2.21-.95-1.06 0-1.86.41-2.42 1.22l-.52.87-.52-.87c-.56-.81-1.36-1.22-2.42-1.22-.92 0-1.65.32-2.21.95-.54.62-.81 1.46-.81 2.52v4.98h2.09V8.66c0-1.06.44-1.6 1.33-1.6.98 0 1.47.63 1.47 1.88v2.72h2.07V8.94c0-1.25.49-1.88 1.47-1.88.89 0 1.33.54 1.33 1.6v4.82h2.09V8.5z"/></svg>
-</a>
-</nav>
-
-<div class="wrap">
-<header>
-<p class="eyebrow" data-i18n-en="Hi, I'm Paweł">Cześć, tu Paweł</p>
-<h1 data-i18n-en="Psychologist under construction.<br>I code tools that help.">Psycholog w budowie.<br>Koduję narzędzia, które pomagają.</h1>
-<p class="tagline" data-i18n-en="Projects at the crossroads of psychology and technology — for people in recovery, on the autism spectrum, and those leaving toxic groups.">Projekty na styku psychologii i technologii — dla osób w trzeźwieniu, w spektrum, i tych, którzy wychodzą z toksycznych grup.</p>
+<!-- ============================== TOPBAR (topbar-component.html) ============================== -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="https://wasiakpawel.pl" class="topbar-brand">
+      <span class="dot"></span>
+      wasiakpawel.pl
+    </a>
+    <nav style="position:relative;">
+      <ul class="topbar-links">
+        <li><a href="https://wasiakpawel.pl" data-i18n-en="Home page">Strona główna</a></li>
+        <li><a href="https://linktree.wasiakpawel.pl" class="is-accent">🔗 Linktree</a></li>
+      </ul>
+      <div class="topbar-tools" role="group" aria-label="Language / Theme">
+        <button type="button" id="lang-pl" aria-pressed="false">PL</button>
+        <button type="button" id="lang-en" aria-pressed="false">EN</button>
+        <button type="button" id="lang-more" title="Other languages / inne języki (Google Translate)">🌐</button>
+        <button type="button" id="theme-toggle" title="Jasny / ciemny motyw" data-i18n-en-title="Light / dark theme">🌓</button>
+      </div>
+      <div id="google_translate_element"></div>
+    </nav>
+  </div>
 </header>
 
-<div class="cards featured">
+<div class="wrap">
 
-<a class="card featured-card" data-tag="Polecane" data-tag-en="Featured" href="https://wolnaglowa.wasiakpawel.pl/" target="_blank" rel="noopener">
-<div class="card-body">
-<h2 data-i18n-en="Free Mind">Wolna Głowa</h2>
-<p data-i18n-en="How to recognize a cult and group manipulation.">Jak rozpoznać sektę i manipulację grupową.</p>
+  <header class="hero">
+    <p class="eyebrow" data-i18n-en="Hi, I'm Paweł">Cześć, tu Paweł</p>
+    <h1 data-i18n-en="Psychologist under construction.<br>I code tools that help.">Psycholog w budowie.<br>Koduję narzędzia, które pomagają.</h1>
+    <p class="tagline" data-i18n-en="Projects at the crossroads of psychology and technology — for people in recovery, on the autism spectrum, and those leaving toxic groups.">Projekty na styku psychologii i technologii — dla osób w trzeźwieniu, w spektrum, i tych, którzy wychodzą z toksycznych grup.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="https://suppi.pl/pawelwasiak" target="_blank" rel="noopener">
+        <span>☕</span><span data-i18n-en="Buy me a coffee">Postaw mi kawę</span>
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/pwasiak30" target="_blank" rel="noopener">
+        <span>GitHub</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ============================== FEATURED ============================== -->
+  <section class="section" style="margin-top:0;">
+    <a class="link-card featured" data-tag="Polecane" data-tag-en="Featured" href="https://pwasiak30.github.io/wolna-glowa/" target="_blank" rel="noopener">
+      <span class="chip" data-i18n-en="Featured">Polecane</span>
+      <h3 data-i18n-en="Free Mind">Wolna Głowa</h3>
+      <p data-i18n-en="How to recognize a cult and group manipulation.">Jak rozpoznać sektę i manipulację grupową.</p>
+      <span class="go" data-i18n-en="Open →">Otwórz →</span>
+    </a>
+  </section>
+
+  <!-- ====================== STREFA PSYCHOLOGICZNA / POMOCOWA ====================== -->
+  <section class="section" id="psychologia">
+    <div class="section-head">
+      <h2 data-i18n-en="Psychology &amp; support">Strefa psychologiczna</h2>
+    </div>
+    <p class="section-note" data-i18n-en="A psychologist working with children and teens. I build tools and resources that pair psychological knowledge with simple, accessible code — for therapists, parents, and people in recovery.">Psycholog pracujący z dziećmi i młodzieżą. Tworzę narzędzia i materiały, które łączą wiedzę psychologiczną z prostym, dostępnym kodem — dla terapeutów, rodziców i osób w trzeźwieniu.</p>
+
+    <div class="grid">
+
+      <a class="link-card" data-tag="Portfolio" data-tag-en="Portfolio" href="https://pwasiak30.github.io/pawel-wasiak-portfolio/" target="_blank" rel="noopener">
+        <span class="chip">Portfolio</span>
+        <h3 data-i18n-en="Psychology portfolio">Portfolio psychologiczne</h3>
+        <p data-i18n-en="A collection of my projects at the border of psychology and technology.">Zbiór moich projektów z pogranicza psychologii i technologii.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+      <a class="link-card" data-tag="PWA · trzeźwość" data-tag-en="PWA · sobriety" href="https://pwasiak30.github.io/Nie-pij-dzis/" target="_blank" rel="noopener">
+        <span class="chip" data-i18n-en="PWA · sobriety">PWA · trzeźwość</span>
+        <h3 data-i18n-en="Don't-drink-today">Nie-pij-dzisiaj</h3>
+        <p data-i18n-en="Craving journal, weekend plan, 12 steps — offline.">Dziennik głodu, plan na weekend, 12 kroków — offline.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+      <a class="link-card" data-tag="Narzędzie kliniczne" data-tag-en="Clinical tool" href="https://pwasiak30.github.io/icd11-dsm5-search/" target="_blank" rel="noopener">
+        <span class="chip" data-i18n-en="Clinical tool">Narzędzie kliniczne</span>
+        <h3>ICD-11 / DSM-5 Search</h3>
+        <p data-i18n-en="Fast lookup of diagnostic criteria.">Szybkie wyszukiwanie kryteriów diagnostycznych.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+      <a class="link-card" data-tag="AAC" data-tag-en="AAC" href="https://pwasiak30.github.io/aac-generator/" target="_blank" rel="noopener">
+        <span class="chip">AAC</span>
+        <h3 data-i18n-en="AAC Generator">AAC Generator</h3>
+        <p data-i18n-en="Communication card generator based on ARASAAC.">Generator kart komunikacyjnych opartych na ARASAAC.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+      <a class="link-card" data-tag="TUS" data-tag-en="TUS" href="https://pwasiak30.github.io/tus-planner/" target="_blank" rel="noopener">
+        <span class="chip">TUS</span>
+        <h3 data-i18n-en="TUS Planner">TUS Planner</h3>
+        <p data-i18n-en="A tool for planning Social Skills Training (TUS) sessions.">Narzędzie do planowania zajęć Treningu Umiejętności Społecznych.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+      <a class="link-card" data-tag="Narzędzie kliniczne" data-tag-en="Clinical tool" href="https://pwasiak30.github.io/kwestionariusze-przesiewowe/" target="_blank" rel="noopener">
+        <span class="chip" data-i18n-en="Clinical tool">Narzędzie kliniczne</span>
+        <h3 data-i18n-en="Screening questionnaires">Kwestionariusze przesiewowe</h3>
+        <p data-i18n-en="A collection of screening tools for quick psychological assessment.">Zbiór narzędzi przesiewowych do szybkiej oceny psychologicznej.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ====================== PROJEKTY IT / OPEN SOURCE ====================== -->
+  <section class="section" id="it">
+    <div class="section-head">
+      <h2 data-i18n-en="IT &amp; open source projects">Projekty IT / Open Source</h2>
+    </div>
+    <p class="section-note" data-i18n-en="Code, repositories, and deployed web tools you can try directly in the browser.">Kod, repozytoria i wdrożone narzędzia webowe — działające demo od razu w przeglądarce.</p>
+
+    <div class="rows" style="margin-bottom:16px;">
+      <a class="row is-primary" href="https://github.com/pwasiak30" target="_blank" rel="noopener">
+        <span class="row-title">GitHub</span>
+        <span class="row-desc" data-i18n-en="code, repositories, this linktree">kod, repozytoria, ten linktree</span>
+      </a>
+      <a class="row" href="https://mastodon.social/@s3in610" target="_blank" rel="noopener">
+        <span class="row-title">Mastodon</span>
+        <span class="row-desc">@s3in610</span>
+      </a>
+    </div>
+
+    <div class="grid">
+
+      <a class="link-card" href="https://pwasiak30.github.io/tablice-rejestracyjne/" target="_blank" rel="noopener">
+        <span class="chip" data-i18n-en="Demo">Demo</span>
+        <h3 data-i18n-en="License plates">Tablice rejestracyjne</h3>
+        <p data-i18n-en="Region lookup by plate number.">Rozpoznawanie regionu po numerze rejestracyjnym.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+      <a class="link-card" href="https://pwasiak30.github.io/drzewo-genealogiczne/" target="_blank" rel="noopener">
+        <span class="chip" data-i18n-en="Demo">Demo</span>
+        <h3 data-i18n-en="Family tree">Drzewo genealogiczne</h3>
+        <p data-i18n-en="Family tree online.">Rodzinne drzewo online.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+      <a class="link-card" href="https://pwasiak30.github.io/Wied-min-3-Kody-do-zbroi-i-rynsztunku/" target="_blank" rel="noopener">
+        <span class="chip" data-i18n-en="Demo">Demo</span>
+        <h3 data-i18n-en="Witcher 3 — codes">Wiedźmin 3 — kody</h3>
+        <p data-i18n-en="Armor and gear codes.">Zbroja i rynsztunek.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+      <a class="link-card" href="https://s3in610.github.io/witcher-chronology/" target="_blank" rel="noopener">
+        <span class="chip" data-i18n-en="Demo">Demo</span>
+        <h3>Witcher Chronology</h3>
+        <p data-i18n-en="Timeline of events in the saga.">Chronologia wydarzeń w sadze.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+      <a class="link-card" href="https://pwasiak30.github.io/pdf-do-tekstu/" target="_blank" rel="noopener">
+        <span class="chip" data-i18n-en="Demo">Demo</span>
+        <h3 data-i18n-en="PDF to text">PDF do tekstu</h3>
+        <p data-i18n-en="PDF to text conversion.">Konwersja PDF na tekst.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+      <a class="link-card" href="https://pwasiak30.github.io/photo-guide/" target="_blank" rel="noopener">
+        <span class="chip" data-i18n-en="Demo">Demo</span>
+        <h3>Photo Guide</h3>
+        <p data-i18n-en="Photography guide.">Poradnik fotograficzny.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+      <a class="link-card" href="https://pwasiak30.github.io/przelicznik-paliwa/" target="_blank" rel="noopener">
+        <span class="chip" data-i18n-en="Demo">Demo</span>
+        <h3 data-i18n-en="Fuel converter">Przelicznik paliwa</h3>
+        <p data-i18n-en="Fuel consumption and cost calculator.">Kalkulator spalania i kosztów.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+      <a class="link-card" href="https://pwasiak30.github.io/linux-tracker/" target="_blank" rel="noopener">
+        <span class="chip" data-i18n-en="Demo">Demo</span>
+        <h3>Linux Tracker</h3>
+        <p data-i18n-en="Tracking Linux distributions.">Śledzenie dystrybucji Linuksa.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+      <a class="link-card" href="https://pwasiak30.github.io/mecze/" target="_blank" rel="noopener">
+        <span class="chip" data-i18n-en="Demo">Demo</span>
+        <h3 data-i18n-en="Matches">Mecze</h3>
+        <p data-i18n-en="Results and schedule.">Wyniki i terminarz.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ====================== OBECNOŚĆ I TWÓRCZOŚĆ ====================== -->
+  <section class="section" id="obecnosc">
+    <div class="section-head">
+      <h2 data-i18n-en="Presence &amp; content">Obecność i twórczość</h2>
+    </div>
+    <p class="section-note" data-i18n-en="Where else you can follow what I do.">Gdzie jeszcze możesz śledzić to, co robię.</p>
+
+    <div class="rows">
+      <a class="row" href="https://www.youtube.com/@psychologia.wasiak" target="_blank" rel="noopener">
+        <span class="row-title">YouTube</span>
+        <span class="row-desc" data-i18n-en="psychology channel">kanał o psychologii</span>
+      </a>
+      <a class="row" href="https://www.linkedin.com/in/pwasiak30" target="_blank" rel="noopener">
+        <span class="row-title">LinkedIn</span>
+        <span class="row-desc" data-i18n-en="experience and education">doświadczenie i studia</span>
+      </a>
+      <a class="row" href="https://x.com/wasiak_dsm" target="_blank" rel="noopener">
+        <span class="row-title">X</span>
+        <span class="row-desc">@wasiak_dsm</span>
+      </a>
+      <a class="row" href="https://www.facebook.com/psychologia.wasiak" target="_blank" rel="noopener">
+        <span class="row-title">Facebook</span>
+        <span class="row-desc">psychologia.wasiak</span>
+      </a>
+      <a class="row" href="https://www.instagram.com/psychologia.wasiak/" target="_blank" rel="noopener">
+        <span class="row-title">Instagram</span>
+        <span class="row-desc">psychologia.wasiak</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ====================== WSPARCIE ====================== -->
+  <section class="section" id="wsparcie">
+    <div class="section-head">
+      <h2 data-i18n-en="Support">Wsparcie</h2>
+    </div>
+    <div class="rows">
+      <a class="row is-accent" href="https://suppi.pl/pawelwasiak" target="_blank" rel="noopener">
+        <span class="row-title" data-i18n-en="☕ Buy me a coffee">☕ Postaw mi kawę</span>
+        <span class="row-desc">Suppi</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ Rząd ikon społecznościowych (social-links-component.html, blok 1) ============ -->
+  <div class="footer-social">
+    <ul class="social-links">
+      <li><a href="https://x.com/wasiak_dsm" target="_blank" rel="noopener" aria-label="X (Twitter)">
+        <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-6.7L4.8 22H1.7l8.1-9.3L1 2h7.1l4.9 6.1L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg>
+      </a></li>
+      <li><a href="https://www.linkedin.com/in/pwasiak30" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05C19.8 8 21 10 21 13.2V23h-4v-8.9c0-2.13-.04-4.86-2.96-4.86-2.97 0-3.42 2.32-3.42 4.7V23H8V8z"/></svg>
+      </a></li>
+      <li><a href="https://www.youtube.com/@psychologia.wasiak" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5v-7L15.8 12l-6.2 3.5z"/></svg>
+      </a></li>
+      <li><a href="https://www.instagram.com/psychologia.wasiak/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.97.24 2.43.4a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.16.46.35 1.26.4 2.43.06 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.24 1.97-.4 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.46.16-1.26.35-2.43.4-1.25.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.16-.46-.35-1.26-.4-2.43C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.24-1.97.4-2.43a4.9 4.9 0 0 1 1.15-1.77A4.9 4.9 0 0 1 5.6 1.8c.46-.16 1.26-.35 2.43-.4C9.28 1.35 9.7 1.34 12 1.34zm0 3.16a6.64 6.64 0 1 0 0 13.28 6.64 6.64 0 0 0 0-13.28zm0 10.95a4.31 4.31 0 1 1 0-8.62 4.31 4.31 0 0 1 0 8.62zm7.34-11.2a1.55 1.55 0 1 1-3.1 0 1.55 1.55 0 0 1 3.1 0z"/></svg>
+      </a></li>
+      <li><a href="https://www.facebook.com/psychologia.wasiak" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.5-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+      </a></li>
+      <li><a href="https://github.com/pwasiak30" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.12.82-.26.82-.58v-2.02c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.75.09-.73.09-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.33 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.56 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.6-2.81 5.63-5.49 5.92.43.38.81 1.1.81 2.22v3.29c0 .32.22.71.83.58A12 12 0 0 0 12 .3z"/></svg>
+      </a></li>
+      <li><a href="https://mastodon.social/@s3in610" target="_blank" rel="noopener" aria-label="Mastodon">
+        <svg viewBox="0 0 24 24"><path d="M21.6 7.5c0-4.1-2.7-5.3-2.7-5.3C17.5 1.5 15.3 1.1 13 1h-.1c-2.3.1-4.5.5-5.9 1.2 0 0-2.7 1.2-2.7 5.3 0 .9-.02 2 0 3.1.06 4 .6 8 3.7 8.9 1.4.4 2.6.5 3.6.4 1.8-.1 2.8-.6 2.8-.6l-.06-1.3s-1.3.4-2.7.4c-1.4-.05-2.9-.15-3.1-1.9a3.5 3.5 0 0 1-.03-.5c1.4.3 3.5.4 4.9.3 1.2-.1 2.5-.3 3.6-.9 0 0 .5-.3.9-.7 1-1 1.4-2.6 1.5-4.6.02-.7.02-1.3.02-1.9zm-2.4 3.9h-1.5V7.9c0-.9-.4-1.4-1.2-1.4-.9 0-1.3.6-1.3 1.7v2.4h-1.5V8.2c0-1.1-.4-1.7-1.3-1.7-.8 0-1.2.5-1.2 1.4v3.5H8.9V7.8c0-.9.2-1.6.7-2.2.5-.6 1.2-.9 2-.9.9 0 1.6.3 2.1 1l.4.7.4-.7c.5-.7 1.2-1 2.1-1 .8 0 1.5.3 2 .9.5.6.7 1.3.7 2.2v3.6z"/></svg>
+      </a></li>
+      <li><a href="https://linktree.wasiakpawel.pl" target="_blank" rel="noopener" aria-label="Wszystkie linki (Linktree)">
+        <svg viewBox="0 0 24 24"><path d="M3.9 12a3.1 3.1 0 0 1 3.1-3.1h3.5v1.7H7a1.4 1.4 0 1 0 0 2.8h3.5v1.7H7A3.1 3.1 0 0 1 3.9 12zm12.6-3.1H13v1.7h3.5a1.4 1.4 0 1 1 0 2.8H13v1.7h3.5a3.1 3.1 0 1 0 0-6.2zM8.5 11.15h7v1.7h-7v-1.7z"/></svg>
+      </a></li>
+    </ul>
+  </div>
+
+  <footer class="site-footer" data-i18n-en="Brzeziny, Łódź Voivodeship, Poland">Brzeziny, woj. łódzkie</footer>
 </div>
-<span class="arrow">→</span>
+
+<!-- ============ Pływające widgety — zawsze widoczne, bez rozwijania (jak na wasiakpawel.pl) ============ -->
+<a class="coffee-fab" href="https://suppi.pl/pawelwasiak" target="_blank" rel="noopener" title="Postaw mi kawę na Suppi" data-i18n-en-title="Buy me a coffee on Suppi">
+  <span class="coffee-icon">☕</span>
+  <span data-i18n-en="Buy a coffee">Postaw kawę</span>
 </a>
 
-</div>
-
-<p class="section-label" data-i18n-en="Psychology">Psychologia</p>
-<div class="cards primary">
-
-<a class="card" data-tag="Portfolio" data-tag-en="Portfolio" href="https://pwasiak30.github.io/pawel-wasiak-portfolio/" target="_blank" rel="noopener">
-<div class="card-body">
-<h2 data-i18n-en="Psychology portfolio">Portfolio psychologiczne</h2>
-<p data-i18n-en="A collection of my projects at the border of psychology and technology.">Zbiór moich projektów z pogranicza psychologii i technologii.</p>
-</div>
-<span class="arrow">→</span>
-</a>
-
-<a class="card" data-tag="PWA · trzeźwość" data-tag-en="PWA · sobriety" href="https://niepijdzis.wasiakpawel.pl/" target="_blank" rel="noopener">
-<div class="card-body">
-<h2 data-i18n-en="Don't-drink-today">Nie-pij-dzisiaj</h2>
-<p data-i18n-en="Craving journal, weekend plan, 12 steps — offline.">Dziennik głodu, plan na weekend, 12 kroków — offline.</p>
-</div>
-<span class="arrow">→</span>
-</a>
-
-<a class="card accent-ochre" data-tag="Narzędzie kliniczne" data-tag-en="Clinical tool" href="http://icddsm.wasiakpawel.pl/" target="_blank" rel="noopener">
-<div class="card-body">
-<h2>ICD-11 / DSM-5 Search</h2>
-<p data-i18n-en="Fast lookup of diagnostic criteria.">Szybkie wyszukiwanie kryteriów diagnostycznych.</p>
-</div>
-<span class="arrow">→</span>
-</a>
-
-<a class="card accent-ochre" data-tag="AAC" data-tag-en="AAC" href="http://aacgenerator.wasiakpawel.pl/" target="_blank" rel="noopener">
-<div class="card-body">
-<h2 data-i18n-en="AAC Generator">AAC Generator</h2>
-<p data-i18n-en="Communication card generator based on ARASAAC.">Generator kart komunikacyjnych opartych na ARASAAC.</p>
-</div>
-<span class="arrow">→</span>
-</a>
-
-<a class="card" data-tag="TUS" data-tag-en="TUS" href="http://tusplanner.wasiakpawel.pl/" target="_blank" rel="noopener">
-<div class="card-body">
-<h2 data-i18n-en="TUS Planner">TUS Planner</h2>
-<p data-i18n-en="A tool for planning Social Skills Training (TUS) sessions.">Narzędzie do planowania zajęć Treningu Umiejętności Społecznych.</p>
-</div>
-<span class="arrow">→</span>
-</a>
-
-<a class="card accent-ochre" data-tag="Narzędzie kliniczne" data-tag-en="Clinical tool" href="https://kwestionariusze.wasiakpawel.pl/" target="_blank" rel="noopener">
-<div class="card-body">
-<h2 data-i18n-en="Screening questionnaires">Kwestionariusze przesiewowe</h2>
-<p data-i18n-en="A collection of screening tools for quick psychological assessment.">Zbiór narzędzi przesiewowych do szybkiej oceny psychologicznej.</p>
-</div>
-<span class="arrow">→</span>
-</a>
-
-</div>
-
-<p class="section-label muted" data-i18n-en="Other projects">Inne projekty</p>
-<div class="cards secondary">
-
-<a class="row" href="https://pwasiak30.github.io/tablice-rejestracyjne/" target="_blank" rel="noopener">
-<span class="row-title" data-i18n-en="License plates">Tablice rejestracyjne</span>
-<span class="row-desc" data-i18n-en="region lookup by plate number">rozpoznawanie regionu po numerze</span>
-</a>
-
-<a class="row" href="https://pwasiak30.github.io/drzewo-genealogiczne/" target="_blank" rel="noopener">
-<span class="row-title" data-i18n-en="Family tree">Drzewo genealogiczne</span>
-<span class="row-desc" data-i18n-en="family tree online">rodzinne drzewo online</span>
-</a>
-
-<a class="row" href="https://pwasiak30.github.io/Wied-min-3-Kody-do-zbroi-i-rynsztunku/" target="_blank" rel="noopener">
-<span class="row-title" data-i18n-en="Witcher 3 — codes">Wiedźmin 3 — kody</span>
-<span class="row-desc" data-i18n-en="armor and gear">zbroja i rynsztunek</span>
-</a>
-
-<a class="row" href="https://s3in610.github.io/witcher-chronology/" target="_blank" rel="noopener">
-<span class="row-title">Witcher Chronology</span>
-<span class="row-desc" data-i18n-en="timeline of events in the saga">chronologia wydarzeń w sadze</span>
-</a>
-
-<a class="row" href="https://pwasiak30.github.io/pdf-do-tekstu/" target="_blank" rel="noopener">
-<span class="row-title" data-i18n-en="PDF to text">PDF do tekstu</span>
-<span class="row-desc" data-i18n-en="PDF to text conversion">konwersja PDF na tekst</span>
-</a>
-
-<a class="row" href="https://pwasiak30.github.io/photo-guide/" target="_blank" rel="noopener">
-<span class="row-title">Photo Guide</span>
-<span class="row-desc" data-i18n-en="photography guide">poradnik fotograficzny</span>
-</a>
-
-<a class="row" href="https://pwasiak30.github.io/przelicznik-paliwa/" target="_blank" rel="noopener">
-<span class="row-title" data-i18n-en="Fuel converter">Przelicznik paliwa</span>
-<span class="row-desc" data-i18n-en="fuel consumption and cost calculator">kalkulator spalania i kosztów</span>
-</a>
-
-<a class="row" href="https://pwasiak30.github.io/linux-tracker/" target="_blank" rel="noopener">
-<span class="row-title">Linux Tracker</span>
-<span class="row-desc" data-i18n-en="tracking Linux distributions">śledzenie dystrybucji Linuksa</span>
-</a>
-
-<a class="row" href="https://pwasiak30.github.io/mecze/" target="_blank" rel="noopener">
-<span class="row-title" data-i18n-en="Matches">Mecze</span>
-<span class="row-desc" data-i18n-en="results and schedule">wyniki i terminarz</span>
-</a>
-
-</div>
-
-<p class="section-label muted" data-i18n-en="Profile">Profil</p>
-<div class="cards secondary">
-
-<a class="row" href="https://x.com/wasiak_dsm" target="_blank" rel="noopener">
-<span class="row-title">X</span>
-<span class="row-desc">@wasiak_dsm</span>
-</a>
-
-<a class="row" href="https://www.linkedin.com/in/pwasiak30" target="_blank" rel="noopener">
-<span class="row-title">LinkedIn</span>
-<span class="row-desc" data-i18n-en="experience and education">doświadczenie i studia</span>
-</a>
-
-<a class="row" href="https://www.youtube.com/@psychologia.wasiak" target="_blank" rel="noopener">
-<span class="row-title">YouTube</span>
-<span class="row-desc" data-i18n-en="psychology channel">kanał o psychologii</span>
-</a>
-
-<a class="row" href="https://www.facebook.com/psychologia.wasiak" target="_blank" rel="noopener">
-<span class="row-title">Facebook</span>
-<span class="row-desc">psychologia.wasiak</span>
-</a>
-
-<a class="row" href="https://www.instagram.com/psychologia.wasiak/" target="_blank" rel="noopener">
-<span class="row-title">Instagram</span>
-<span class="row-desc">psychologia.wasiak</span>
-</a>
-
-<a class="row" href="https://github.com/pwasiak30" target="_blank" rel="noopener">
-<span class="row-title">GitHub</span>
-<span class="row-desc" data-i18n-en="code and projects">kod i projekty</span>
-</a>
-
-<a class="row" href="https://mastodon.social/@s3in610" target="_blank" rel="noopener">
-<span class="row-title">Mastodon</span>
-<span class="row-desc">@s3in610</span>
-</a>
-
-</div>
-
-<p class="section-label muted" data-i18n-en="Support">Wsparcie</p>
-<div class="cards secondary">
-
-<a class="row accent-ochre" href="https://suppi.pl/pawelwasiak" target="_blank" rel="noopener">
-<span class="row-title" data-i18n-en="☕ Buy me a coffee">☕ Postaw mi kawę</span>
-<span class="row-desc">Suppi</span>
-</a>
-
-</div>
-
-<footer data-i18n-en="Brzeziny, Łódź Voivodeship, Poland">Brzeziny, woj. łódzkie</footer>
+<div class="social-fab" role="navigation" aria-label="Media społecznościowe">
+  <a href="https://x.com/wasiak_dsm" target="_blank" rel="noopener" title="X (Twitter)" aria-label="X (Twitter)">
+    <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-6.7L4.8 22H1.7l8.1-9.3L1 2h7.1l4.9 6.1L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg>
+  </a>
+  <a href="https://www.linkedin.com/in/pwasiak30" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1s2.48 1.1 2.48 2.5zM.5 8h4V23h-4V8zm7.5 0h3.8v2.05h.05c.53-1 1.83-2.05 3.77-2.05C19.8 8 21 10 21 13.2V23h-4v-8.9c0-2.13-.04-4.86-2.96-4.86-2.97 0-3.42 2.32-3.42 4.7V23H8V8z"/></svg>
+  </a>
+  <a href="https://www.youtube.com/@psychologia.wasiak" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube">
+    <svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.5v-7L15.8 12l-6.2 3.5z"/></svg>
+  </a>
+  <a href="https://www.instagram.com/psychologia.wasiak/" target="_blank" rel="noopener" title="Instagram" aria-label="Instagram">
+    <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.97.24 2.43.4a4.9 4.9 0 0 1 1.77 1.15 4.9 4.9 0 0 1 1.15 1.77c.16.46.35 1.26.4 2.43.06 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.24 1.97-.4 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.46.16-1.26.35-2.43.4-1.25.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.97-.24-2.43-.4a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.16-.46-.35-1.26-.4-2.43C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.24-1.97.4-2.43a4.9 4.9 0 0 1 1.15-1.77A4.9 4.9 0 0 1 5.6 1.8c.46-.16 1.26-.35 2.43-.4C9.28 1.35 9.7 1.34 12 1.34zm0 3.16a6.64 6.64 0 1 0 0 13.28 6.64 6.64 0 0 0 0-13.28zm0 10.95a4.31 4.31 0 1 1 0-8.62 4.31 4.31 0 0 1 0 8.62zm7.34-11.2a1.55 1.55 0 1 1-3.1 0 1.55 1.55 0 0 1 3.1 0z"/></svg>
+  </a>
+  <a href="https://www.facebook.com/psychologia.wasiak" target="_blank" rel="noopener" title="Facebook" aria-label="Facebook">
+    <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.5-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+  </a>
+  <a href="https://github.com/pwasiak30" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+    <svg viewBox="0 0 24 24"><path d="M12 .3a12 12 0 0 0-3.79 23.4c.6.12.82-.26.82-.58v-2.02c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.75.09-.73.09-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.33 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.56 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.6-2.81 5.63-5.49 5.92.43.38.81 1.1.81 2.22v3.29c0 .32.22.71.83.58A12 12 0 0 0 12 .3z"/></svg>
+  </a>
+  <a href="https://mastodon.social/@s3in610" target="_blank" rel="noopener" title="Mastodon" aria-label="Mastodon">
+    <svg viewBox="0 0 24 24"><path d="M21.6 7.5c0-4.1-2.7-5.3-2.7-5.3C17.5 1.5 15.3 1.1 13 1h-.1c-2.3.1-4.5.5-5.9 1.2 0 0-2.7 1.2-2.7 5.3 0 .9-.02 2 0 3.1.06 4 .6 8 3.7 8.9 1.4.4 2.6.5 3.6.4 1.8-.1 2.8-.6 2.8-.6l-.06-1.3s-1.3.4-2.7.4c-1.4-.05-2.9-.15-3.1-1.9a3.5 3.5 0 0 1-.03-.5c1.4.3 3.5.4 4.9.3 1.2-.1 2.5-.3 3.6-.9 0 0 .5-.3.9-.7 1-1 1.4-2.6 1.5-4.6.02-.7.02-1.3.02-1.9zm-2.4 3.9h-1.5V7.9c0-.9-.4-1.4-1.2-1.4-.9 0-1.3.6-1.3 1.7v2.4h-1.5V8.2c0-1.1-.4-1.7-1.3-1.7-.8 0-1.2.5-1.2 1.4v3.5H8.9V7.8c0-.9.2-1.6.7-2.2.5-.6 1.2-.9 2-.9.9 0 1.6.3 2.1 1l.4.7.4-.7c.5-.7 1.2-1 2.1-1 .8 0 1.5.3 2 .9.5.6.7 1.3.7 2.2v3.6z"/></svg>
+  </a>
+  <a href="https://linktree.wasiakpawel.pl" target="_blank" rel="noopener" title="Wszystkie linki" aria-label="Wszystkie linki (Linktree)">
+    <svg viewBox="0 0 24 24"><path d="M3.9 12a3.1 3.1 0 0 1 3.1-3.1h3.5v1.7H7a1.4 1.4 0 1 0 0 2.8h3.5v1.7H7A3.1 3.1 0 0 1 3.9 12zm12.6-3.1H13v1.7h3.5a1.4 1.4 0 1 1 0 2.8H13v1.7h3.5a3.1 3.1 0 1 0 0-6.2zM8.5 11.15h7v1.7h-7v-1.7z"/></svg>
+  </a>
 </div>
 
 <script>
 (function () {
 "use strict";
 var STORAGE_KEY = "pref-lang";
+var THEME_KEY = "pref-theme";
 var htmlEl = document.documentElement;
 
+/* --- Motyw jasny/ciemny --- */
+function applyTheme(theme) {
+if (theme === "dark" || theme === "light") {
+htmlEl.setAttribute("data-theme", theme);
+} else {
+htmlEl.removeAttribute("data-theme");
+}
+var btn = document.getElementById("theme-toggle");
+if (btn) btn.setAttribute("aria-pressed", String(theme === "dark"));
+try { if (theme) localStorage.setItem(THEME_KEY, theme); } catch (e) {}
+}
+var savedTheme = null;
+try { savedTheme = localStorage.getItem(THEME_KEY); } catch (e) {}
+if (savedTheme) applyTheme(savedTheme);
+document.getElementById("theme-toggle").addEventListener("click", function () {
+var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+var current = htmlEl.getAttribute("data-theme") || (prefersDark ? "dark" : "light");
+applyTheme(current === "dark" ? "light" : "dark");
+});
+
+/* --- Tłumaczenie PL/EN --- */
 function capturePolishSnapshot() {
 document.querySelectorAll("[data-i18n-en]").forEach(function (el) {
 if (!el.hasAttribute("data-i18n-pl")) {
@@ -609,6 +659,12 @@ if (!el.hasAttribute("data-i18n-pl-title")) {
 el.setAttribute("data-i18n-pl-title", el.getAttribute("title") || "");
 }
 el.setAttribute("title", lang === "en" ? el.getAttribute("data-i18n-en-title") : el.getAttribute("data-i18n-pl-title"));
+});
+document.querySelectorAll("[data-i18n-en-content]").forEach(function (el) {
+if (!el.hasAttribute("data-i18n-pl-content")) {
+el.setAttribute("data-i18n-pl-content", el.getAttribute("content") || "");
+}
+el.setAttribute("content", lang === "en" ? el.getAttribute("data-i18n-en-content") : el.getAttribute("data-i18n-pl-content"));
 });
 document.querySelectorAll("[data-tag-en]").forEach(function (el) {
 if (!el.hasAttribute("data-tag-pl")) {
@@ -639,9 +695,7 @@ applyLang(initialLang);
 document.getElementById("lang-pl").addEventListener("click", function () { applyLang("pl"); setGoogTrans(""); });
 document.getElementById("lang-en").addEventListener("click", function () { applyLang("en"); setGoogTrans(""); });
 
-/* --- Fallback: Google Translate dla języków innych niż PL/EN ---
-   Baza tekstu to PL/EN pisane ręcznie; dla pozostałych języków przeglądarki
-   podłączamy oficjalny widget Google Translate (tłumaczenie maszynowe). */
+/* --- Fallback: Google Translate dla języków innych niż PL/EN --- */
 function setGoogTrans(pair) {
 var expires = pair ? "; expires=Fri, 31 Dec 9999 23:59:59 GMT" : "; expires=Thu, 01 Jan 1970 00:00:00 GMT";
 document.cookie = "googtrans=" + pair + "; path=/" + expires;
@@ -669,8 +723,6 @@ box.classList.toggle("open");
 loadGoogleTranslate();
 });
 
-/* Jeśli język przeglądarki to nie PL ani EN, spróbuj automatycznie
-   przetłumaczyć stronę (z angielskiej bazy) na język odwiedzającego. */
 if (!saved && !isPlOrEn) {
 var target = browserLang.split("-")[0];
 applyLang("en");
