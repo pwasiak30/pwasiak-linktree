@@ -166,7 +166,6 @@ label{ font-weight:600; font-size:14px; display:block; margin-bottom:6px; }
 .social-fab a:hover{ background:var(--teal-600); color:#fff; transform:translateY(-2px); }
 .social-fab svg{ width:15px; height:15px; fill:currentColor; display:block; }
 .social-fab .emoji{ font-size:.85rem; line-height:1; }
-@media (max-width:640px){ .social-fab{ display:none; } }
 
 /* Przycisk wsparcia (Suppi) — zawsze widoczny, jak na wasiakpawel.pl */
 .coffee-fab{
@@ -180,7 +179,24 @@ label{ font-weight:600; font-size:14px; display:block; margin-bottom:6px; }
 }
 .coffee-fab:hover, .coffee-fab:focus-visible{ transform:translateY(-2px); background:var(--coral-dark); outline:none; }
 .coffee-fab .coffee-icon{ font-size:1.05rem; line-height:1; }
-@media (max-width:640px){ .coffee-fab{ display:none; } }
+
+/* Na małych ekranach oba widgety zostają widoczne (nie znikają), ale pasek social
+   układa się poziomo przy dolnej krawędzi zamiast pionowo w górę — inaczej zasłaniałby
+   przyciski w treści strony. Koralowy przycisk kawy chowa się do samej ikony. */
+@media (max-width:640px){
+  .social-fab{
+    left:8px; right:8px; bottom:8px; width:auto;
+    flex-direction:row; justify-content:center; flex-wrap:wrap;
+    padding:6px 8px; gap:4px;
+  }
+  .social-fab a{ width:26px; height:26px; }
+  .social-fab svg{ width:12px; height:12px; }
+  .coffee-fab{
+    right:10px; bottom:64px; padding:10px; border-radius:50%;
+    width:44px; height:44px; justify-content:center;
+  }
+  .coffee-fab span:last-child{ display:none; }
+}
 
 /* ==========================================================================
    TOPBAR — 1:1 z topbar-component.html, rozszerzony o przełącznik PL/EN
