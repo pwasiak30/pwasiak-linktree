@@ -343,6 +343,31 @@ header.hero{ padding:56px 0 40px; }
 .link-card.featured .go{ color:var(--coral); font-weight:600; }
 .link-card.featured:hover{ box-shadow:0 0 0 4px color-mix(in srgb, var(--coral) 20%, transparent), 0 14px 34px rgba(49,44,34,0.18); }
 
+/* Wyjątkowe wyróżnienie dla jednego, flagowego projektu (ASD_Browser) —
+   wyraźnie mocniejsze niż standardowe .featured, żeby było oczywiste, że
+   to jest priorytet numer jeden w linktree. */
+.link-card.hero-featured{
+  border:2px solid var(--sage);
+  background:linear-gradient(160deg, var(--card) 0%, var(--card) 55%, color-mix(in srgb, var(--sage) 10%, var(--card)) 100%);
+  box-shadow:0 0 0 6px color-mix(in srgb, var(--sage) 16%, transparent), 0 16px 40px rgba(49,44,34,0.16);
+  padding:32px 30px;
+  gap:14px;
+}
+.link-card.hero-featured .chip{
+  background:var(--sage); color:#fff; font-weight:700;
+  display:inline-flex; align-items:center; gap:6px;
+}
+.link-card.hero-featured h3{ font-size:26px; }
+.link-card.hero-featured p{ font-size:16px; }
+.link-card.hero-featured .go{ color:var(--sage-dark); font-weight:700; font-size:14px; }
+.link-card.hero-featured:hover{
+  transform:translateY(-4px);
+  box-shadow:0 0 0 6px color-mix(in srgb, var(--sage) 24%, transparent), 0 20px 46px rgba(49,44,34,0.20);
+}
+@media (prefers-color-scheme: dark){
+  .link-card.hero-featured{ box-shadow:0 0 0 6px color-mix(in srgb, var(--sage) 22%, transparent), 0 16px 40px rgba(0,0,0,0.35); }
+}
+
 .rows{ display:flex; flex-direction:column; gap:10px; }
 .row{
   display:flex; align-items:center; justify-content:space-between; gap:14px;
@@ -456,12 +481,12 @@ footer.site-footer{
     </div>
   </header>
 
-  <!-- ============================== FEATURED ============================== -->
+  <!-- ============================== FEATURED (flagowy projekt, na pierwszym miejscu) ============================== -->
   <section class="section" style="margin-top:0;">
-    <a class="link-card featured" data-tag="Polecane" data-tag-en="Featured" href="https://pwasiak30.github.io/wolna-glowa/" target="_blank" rel="noopener">
-      <span class="chip" data-i18n-en="Featured">Polecane</span>
-      <h3 data-i18n-en="Free Mind">Wolna Głowa</h3>
-      <p data-i18n-en="How to recognize a cult and group manipulation.">Jak rozpoznać sektę i manipulację grupową.</p>
+    <a class="link-card hero-featured" data-tag="Główny projekt" data-tag-en="Flagship project" href="https://asd-browser.wasiakpawel.pl" target="_blank" rel="noopener">
+      <span class="chip" data-i18n-en="🚀 Flagship project">🚀 Główny projekt</span>
+      <h3 data-i18n-en="ASD_Browser">ASD_Browser</h3>
+      <p data-i18n-en="A sensory browser for people on the autism spectrum — blocks autoplay, flashing animations and tab chaos. My most ambitious project, and the starting point of my master's thesis.">Przeglądarka sensoryczna dla osób w spektrum autyzmu — blokuje autoodtwarzanie, migające animacje i chaos kart. Mój najważniejszy i najambitniejszy projekt — również punkt wyjścia do pracy magisterskiej.</p>
       <span class="go" data-i18n-en="Open →">Otwórz →</span>
     </a>
   </section>
@@ -474,6 +499,13 @@ footer.site-footer{
     <p class="section-note" data-i18n-en="A psychologist working with children and teens. I build tools and resources that pair psychological knowledge with simple, accessible code — for therapists, parents, and people in recovery.">Psycholog pracujący z dziećmi i młodzieżą. Tworzę narzędzia i materiały, które łączą wiedzę psychologiczną z prostym, dostępnym kodem — dla terapeutów, rodziców i osób w trzeźwieniu.</p>
 
     <div class="grid">
+
+      <a class="link-card" data-tag="Psychoedukacja" data-tag-en="Psychoeducation" href="https://pwasiak30.github.io/wolna-glowa/" target="_blank" rel="noopener">
+        <span class="chip" data-i18n-en="Psychoeducation">Psychoedukacja</span>
+        <h3 data-i18n-en="Free Mind">Wolna Głowa</h3>
+        <p data-i18n-en="How to recognize a cult and group manipulation.">Jak rozpoznać sektę i manipulację grupową.</p>
+        <span class="go" data-i18n-en="Open →">Otwórz →</span>
+      </a>
 
       <a class="link-card" data-tag="Portfolio" data-tag-en="Portfolio" href="https://pwasiak30.github.io/pawel-wasiak-portfolio/" target="_blank" rel="noopener">
         <span class="chip">Portfolio</span>
